@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motion Design Essentials | Femi Maven</title>
+    
+    <!-- Meta Tags -->
+    <meta property="og:title" content="Motion Design Essentials | Femi Maven" />
+    <meta property="og:description" content="Master motion design on your smartphone. Join 200+ students learning professional animation techniques." />
+    <meta property="og:image" content="/attached_assets/smartphone-motion-design--selar.com-68e6f2ac650e8_1765636006072.jpeg" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (Internal/CDN) -->
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-background: hsl(224 71% 4%);
+            --color-card: hsl(222 47% 11%);
+            --color-primary: hsl(180 100% 50%);
+            --color-accent: hsl(280 60% 60%);
+            --font-sans: "Inter", sans-serif;
+            --font-heading: "Space Grotesk", sans-serif;
+        }
+
+        body {
+            @apply bg-background text-gray-100 font-sans antialiased;
+        }
+        
+        h1, h2, h3, h4 {
+            @apply font-heading;
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px hsla(180, 100%, 50%, 0.5);
+        }
+
+        .box-glow {
+            box-shadow: 0 0 40px -10px hsla(180, 100%, 50%, 0.3);
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.5; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-background/80 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <img src="./mavinmintlogo.jpg" alt="Logo" class="h-8 w-8 rounded-full">
+                <span class="font-heading font-bold text-xl tracking-tight">Maven Mint</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#curriculum" class="text-sm font-medium hover:text-primary transition-colors">Curriculum</a>
+                <a href="#testimonials" class="text-sm font-medium hover:text-primary transition-colors">Reviews</a>
+                <a href="#about" class="text-sm font-medium hover:text-primary transition-colors">About</a>
+                <a href="#pricing" class="bg-primary text-gray-900 px-6 py-2 rounded-full font-bold hover:bg-cyan-400 transition-colors">Enroll Now</a>
+            </div>
+
+            <button class="md:hidden text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-background border-b border-white/10 p-4 space-y-4">
+            <a href="#curriculum" class="block text-sm font-medium">Curriculum</a>
+            <a href="#testimonials" class="block text-sm font-medium">Reviews</a>
+            <a href="#about" class="block text-sm font-medium">About</a>
+            <a href="#pricing" class="block w-full bg-primary text-gray-900 text-center py-3 rounded-lg font-bold">Enroll Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden">
+        <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-primary/20 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="reveal active">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold mb-6 border border-primary/20">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+                    </span>
+                    Join 600+ Keyframe Wizards
+                </div>
+                <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6">
+                    Master Motion Design on your <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent text-glow">Smartphone</span>
+                </h1>
+                <p class="text-lg text-gray-400 mb-8 max-w-lg">
+                    Crack the code of creating outstanding motion designs without an expensive PC. Join over 200+ students who have transformed their smartphone into a professional animation studio. Learn industry-standard techniques used by top motion designers, from basic animations to complex promotional videos that impress clients and land gigs.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="#pricing" class="bg-primary text-gray-900 hover:bg-cyan-400 text-lg px-8 py-4 font-bold rounded-full shadow-[0_0_20px_rgba(0,229,255,0.3)] text-center transition-all hover:scale-105">
+                        Get Started • ₦50,000
+                    </a>
+                    <a href="#curriculum" class="px-8 py-4 rounded-full border border-gray-700 hover:bg-white/5 text-center transition-colors font-medium">
+                        View Curriculum
+                    </a>
+                </div>
+                <div class="mt-8 flex items-center gap-4 text-sm text-gray-500">
+                    <div class="flex -space-x-2">
+                        <div class="w-8 h-8 rounded-full bg-gray-800 border border-background flex items-center justify-center text-xs font-bold text-white">A</div>
+                        <div class="w-8 h-8 rounded-full bg-gray-800 border border-background flex items-center justify-center text-xs font-bold text-white">B</div>
+                        <div class="w-8 h-8 rounded-full bg-gray-800 border border-background flex items-center justify-center text-xs font-bold text-white">C</div>
+                        <div class="w-8 h-8 rounded-full bg-gray-800 border border-background flex items-center justify-center text-xs font-bold text-white">D</div>
+                    </div>
+                    <p>Joined by 200+ designers</p>
+                </div>
+            </div>
+
+            <div class="relative reveal delay-200">
+                <div class="animate-float relative z-10">
+                    <img src="./smartphone-motion-design--selar.com-68e6f2ac650e8.jpeg" alt="Course Box" class="w-full max-w-md mx-auto rounded-xl box-glow border border-white/10">
+                </div>
+                <div class="absolute -top-10 -right-10 w-24 h-24 bg-accent/20 backdrop-blur-md border border-accent/30 rounded-xl flex items-center justify-center animate-pulse">
+                    <svg class="w-10 h-10 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <div class="absolute -bottom-5 -left-5 w-20 h-20 bg-primary/20 backdrop-blur-md border border-primary/30 rounded-xl flex items-center justify-center animate-pulse">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">How It Works</h2>
+                <p class="text-gray-400">Simple steps to transform your smartphone into a motion design studio.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="text-center reveal">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl">1</div>
+                    <h3 class="font-bold mb-4">Enroll & Access</h3>
+                    <p class="text-gray-400">Get instant access to all 5 modules, project files, and our exclusive community.</p>
+                </div>
+                <div class="text-center reveal delay-100">
+                    <div class="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl">2</div>
+                    <h3 class="font-bold mb-4">Learn at Your Pace</h3>
+                    <p class="text-gray-400">Follow the structured curriculum, complete assignments, and get personalized feedback.</p>
+                </div>
+                <div class="text-center reveal delay-200">
+                    <div class="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-6 text-white font-bold text-xl">3</div>
+                    <h3 class="font-bold mb-4">Launch Your Career</h3>
+                    <p class="text-gray-400">Create a professional portfolio and start landing motion design clients.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-10 border-y border-white/5 bg-black/20">
+        <div class="container mx-auto px-4 grid grid-cols-3 gap-4">
+            <div class="text-center reveal">
+                <div class="text-4xl font-heading font-bold text-primary mb-1">200+</div>
+                <div class="text-xs text-gray-500 uppercase tracking-wider">Students</div>
+            </div>
+            <div class="text-center border-x border-white/10 reveal delay-100">
+                <div class="text-4xl font-heading font-bold text-accent mb-1">5</div>
+                <div class="text-xs text-gray-500 uppercase tracking-wider">Modules</div>
+            </div>
+            <div class="text-center reveal delay-200">
+                <div class="text-4xl font-heading font-bold text-white mb-1">Lifetime</div>
+                <div class="text-xs text-gray-500 uppercase tracking-wider">Access</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Coach Section -->
+    <section id="about" class="py-20 overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="bg-gradient-to-br from-gray-800/50 to-background border border-white/5 rounded-3xl p-8 md:p-12 reveal">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                            "Is it possible to create professional motion designs on my phone?"
+                        </h2>
+                        <div class="space-y-4 text-gray-400">
+                            <p>
+                                That was the question I asked my coach in 2020. I saw people making half a million per project on platforms like Upwork and Fiverr, but they all used laptops and expensive software like After Effects. I was stuck with just my smartphone, wondering if I could ever compete.
+                            </p>
+                            <p>
+                                I was concerned if I could meet their standard with just a smartphone. But I didn't let that stop me. I spent months cracking the code, practicing night after night, experimenting with different apps and techniques. I went from making basic videos to creating professional-grade motion graphics that leave clients speechless.
+                            </p>
+                            <p>
+                                Through trial and error, I discovered that motion design isn't about having the most powerful computer—it's about understanding the principles and having the right workflow. Now, I've packaged everything I know into this course to help you do the same, without the months of frustration I went through.
+                            </p>
+                            <p class="text-white font-medium">
+                                We don't just teach you buttons. We teach you how to think like a Director, create like a Pro, and charge like a Boss—all from your phone.
+                            </p>
+                        </div>
+                        <div class="mt-8 flex items-center gap-4">
+                            <img src="/attached_assets/mavin_mint_logo_1765636006071.jpg" alt="Femi Maven" class="w-12 h-12 rounded-full border border-white/20" loading="lazy">
+                            <div>
+                                <div class="font-bold text-white">Femi Maven</div>
+                                <div class="text-sm text-primary">Motion Designer & Instructor</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 blur-3xl rounded-full opacity-50"></div>
+                        <div class="relative z-10 grid gap-4">
+                            <div class="bg-background/80 backdrop-blur border border-white/10 p-4 rounded-xl">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-2 h-2 rounded-full bg-red-500"></div>
+                                    <div class="text-xs font-mono text-muted-foreground">BEFORE</div>
+                                </div>
+                                <div class="aspect-video bg-black/50 rounded flex items-center justify-center p-4">
+                                    <video class="w-full h-full object-cover rounded" controls poster="/attached_assets/before-poster.jpg" loading="lazy" preload="metadata">
+                                        <source src="before.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                            <div class="flex justify-center">
+                                <svg class="text-muted-foreground w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </div>
+                            <div class="bg-background/80 backdrop-blur border border-primary/30 p-4 rounded-xl shadow-[0_0_30px_rgba(0,229,255,0.15)]">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <div class="w-2 h-2 rounded-full bg-green-500"></div>
+                                    <div class="text-xs font-mono text-primary">AFTER (YOUR POTENTIAL)</div>
+                                </div>
+                                <div class="aspect-video bg-gradient-to-br from-primary/20 to-accent/20 rounded flex items-center justify-center p-4 relative overflow-hidden group cursor-pointer">
+                                    <video class="w-full h-full object-cover rounded" controls poster="/attached_assets/after-poster.jpg" loading="lazy" preload="metadata">
+                                        <source src="after.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum -->
+    <section id="curriculum" class="py-20 bg-card/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">What You Will Learn</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    A comprehensive curriculum designed to take you from beginner to pro, all on your smartphone. Each module builds on the previous one, ensuring you have a solid foundation before moving to advanced techniques. You'll learn not just how to use apps, but how to think like a professional motion designer.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Module 1 -->
+                <div class="bg-background/50 border border-white/5 p-6 rounded-xl hover:border-primary/50 transition-colors reveal">
+                    <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Introduction To Motion Design</h3>
+                    <p class="text-sm text-gray-400">Understanding what motion design really is and its core concepts. Learn the fundamentals of animation, timing, and how to tell stories through movement. Discover the smartphone apps that will become your creative arsenal.</p>
+                </div>
+                
+                <!-- Module 2 -->
+                <div class="bg-background/50 border border-white/5 p-6 rounded-xl hover:border-primary/50 transition-colors reveal delay-100">
+                    <div class="w-12 h-12 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">The Fundamentals Of Animation</h3>
+                    <p class="text-sm text-gray-400">Mastering the 12 principles of animation on a mobile device. From squash and stretch to anticipation and follow-through, learn how to make your animations feel alive and professional, all without expensive software.</p>
+                </div>
+
+                <!-- Module 3 -->
+                <div class="bg-background/50 border border-white/5 p-6 rounded-xl hover:border-primary/50 transition-colors reveal delay-200">
+                    <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Composition and Layout Principles</h3>
+                    <p class="text-sm text-gray-400">How to arrange elements for maximum visual impact. Master the rule of thirds, golden ratio, and color theory specifically for motion graphics. Learn to create layouts that guide the viewer's eye and enhance your message.</p>
+                </div>
+
+                <!-- Module 4 -->
+                <div class="bg-background/50 border border-white/5 p-6 rounded-xl hover:border-primary/50 transition-colors reveal">
+                    <div class="w-12 h-12 rounded-lg bg-accent/10 text-accent flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Introduction To Sound Design</h3>
+                    <p class="text-sm text-gray-400">Elevate your visuals with professional soundscapes. Learn how to choose the right music, create sound effects, and sync audio with your animations to create immersive experiences that captivate your audience.</p>
+                </div>
+
+                <!-- Module 5 -->
+                <div class="bg-background/50 border border-white/5 p-6 rounded-xl hover:border-primary/50 transition-colors reveal delay-100">
+                    <div class="w-12 h-12 rounded-lg bg-primary/10 text-primary flex items-center justify-center mb-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Creating Stunning Promotional Video</h3>
+                    <p class="text-sm text-gray-400">Put it all together to create client-ready projects. Learn the complete workflow from concept to delivery, including client communication, project management, and how to price your services competitively.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <div class="flex items-center justify-center gap-4 mb-6">
+                    <img src="alight-motion.png" alt="Alight Motion Logo" class="h-12 w-auto" loading="lazy">
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Master Alight Motion</h2>
+                <p class="text-gray-400">The most powerful motion design app for mobile - learn to create professional animations without expensive software.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="text-center reveal">
+                    <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🎭</span>
+                    </div>
+                    <h3 class="font-bold mb-2">2D Animation</h3>
+                    <p class="text-sm text-gray-400">Master keyframes, easing, and layer-based animation techniques</p>
+                </div>
+                <div class="text-center reveal delay-100">
+                    <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🌟</span>
+                    </div>
+                    <h3 class="font-bold mb-2">Visual Effects</h3>
+                    <p class="text-sm text-gray-400">Create stunning particle effects, glows, and advanced transitions</p>
+                </div>
+                <div class="text-center reveal delay-200">
+                    <div class="w-16 h-16 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🎨</span>
+                    </div>
+                    <h3 class="font-bold mb-2">Vector Graphics</h3>
+                    <p class="text-sm text-gray-400">Design and animate scalable vector shapes and illustrations</p>
+                </div>
+                <div class="text-center reveal delay-300">
+                    <div class="w-16 h-16 bg-accent/10 rounded-xl flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl">🎬</span>
+                    </div>
+                    <h3 class="font-bold mb-2">Motion Tracking</h3>
+                    <p class="text-sm text-gray-400">Track movement in videos and add effects that follow objects</p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12 reveal">
+                <p class="text-gray-400 max-w-2xl mx-auto">
+                    Alight Motion gives you After Effects-level power in your pocket. Learn professional workflows, advanced techniques, and how to export for any platform.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Testimonials -->
+    <section class="py-20 bg-card/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Student Success Stories</h2>
+                <p class="text-gray-400">Real results from real students who've transformed their careers.</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-background border border-white/5 p-6 rounded-xl reveal">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center text-accent font-bold">A</div>
+                        <div>
+                            <div class="font-bold">Adebayo</div>
+                            <div class="text-sm text-gray-400">Graphic Designer</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 italic">"This course completely changed how I approach design. I went from struggling with basic animations to creating professional motion graphics that my clients love. The smartphone approach is genius!"</p>
+                </div>
+                <div class="bg-background border border-white/5 p-6 rounded-xl reveal delay-100">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center text-primary font-bold">C</div>
+                        <div>
+                            <div class="font-bold">Chioma</div>
+                            <div class="text-sm text-gray-400">Content Creator</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 italic">"Femi's teaching style is incredible. Everything is explained so clearly, and the practical assignments helped me build real skills. I landed my first motion design gig just 2 weeks after finishing!"</p>
+                </div>
+                <div class="bg-background border border-white/5 p-6 rounded-xl reveal delay-200">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center text-accent font-bold">O</div>
+                        <div>
+                            <div class="font-bold">Olu</div>
+                            <div class="text-sm text-gray-400">Freelancer</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 italic">"The sound design module alone was worth the price. I never knew audio could make such a difference in my videos. My engagement rates have increased by 300% since applying what I learned."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / Tiers -->
+    <section id="pricing" class="py-20">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Choose Your Path</h2>
+                <p class="text-gray-400">Whether you are an Apprentice or seeking Mastery. Start with our comprehensive course and unlock your potential as a smartphone motion designer.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Tier 1 -->
+                <div class="rounded-3xl border border-primary shadow-[0_0_30px_rgba(0,229,255,0.1)] bg-card overflow-hidden flex flex-col relative reveal">
+                    <div class="absolute top-0 right-0 bg-primary text-gray-900 text-xs font-bold px-3 py-1 rounded-bl-xl">MOST POPULAR</div>
+                    <div class="p-8 flex-1">
+                        <h3 class="text-xl font-bold mb-2">Motion Design Essentials</h3>
+                        <p class="text-sm text-gray-400 mb-6 h-12">Complete Smartphone Course - Everything you need to start your motion design career</p>
+                        <div class="text-3xl font-bold mb-8">₦50,000</div>
+                        <ul class="space-y-4 mb-8 text-sm text-gray-300">
+                            <li class="flex items-center gap-2"><span class="text-primary">✓</span> Lifetime Access to Course Materials</li>
+                            <li class="flex items-center gap-2"><span class="text-primary">✓</span> 5 Comprehensive Modules</li>
+                            <li class="flex items-center gap-2"><span class="text-primary">✓</span> Community Support Group</li>
+                            <li class="flex items-center gap-2"><span class="text-primary">✓</span> Project Files & Assets</li>
+                            <li class="flex items-center gap-2"><span class="text-primary">✓</span> Certificate of Completion</li>
+                        </ul>
+                    </div>
+                    <div class="p-8 pt-0 mt-auto">
+                        <button class="w-full bg-primary text-gray-900 font-bold h-12 rounded-xl hover:bg-cyan-400 transition-colors">Enroll Now</button>
+                    </div>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="rounded-3xl border border-white/10 bg-card/50 overflow-hidden flex flex-col reveal delay-100 opacity-75">
+                    <div class="p-8 flex-1">
+                        <h3 class="text-xl font-bold mb-2">Motion Design Accelerator</h3>
+                        <p class="text-sm text-gray-400 mb-6 h-12">Deep dive into advanced techniques.</p>
+                        <div class="text-3xl font-bold mb-8">₦100,000</div>
+                        <ul class="space-y-4 mb-8 text-sm text-gray-300">
+                            <li class="flex items-center gap-2"><span class="text-gray-500">✓</span> Everything in Essential</li>
+                            <li class="flex items-center gap-2"><span class="text-gray-500">✓</span> 290+ Advanced Tutorials</li>
+                            <li class="flex items-center gap-2"><span class="text-gray-500">✓</span> Priority Review</li>
+                        </ul>
+                    </div>
+                    <div class="p-8 pt-0 mt-auto">
+                        <button class="w-full bg-white/5 border border-white/10 text-white font-bold h-12 rounded-xl hover:bg-white/10 transition-colors">Join Waitlist</button>
+                    </div>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="rounded-3xl border border-white/10 bg-card/50 overflow-hidden flex flex-col reveal delay-200 opacity-75">
+                    <div class="p-8 flex-1">
+                        <h3 class="text-xl font-bold mb-2">Motion Design Mastery</h3>
+                        <p class="text-sm text-gray-400 mb-6 h-12">Business & Technical Masterclass.</p>
+                        <div class="text-3xl font-bold mb-8">Coming Soon</div>
+                        <ul class="space-y-4 mb-8 text-sm text-gray-300">
+                            <li class="flex items-center gap-2"><span class="text-gray-500">✓</span> Business of Motion</li>
+                            <li class="flex items-center gap-2"><span class="text-gray-500">✓</span> Client Acquisition</li>
+                            <li class="flex items-center gap-2"><span class="text-gray-500">✓</span> SaaS Video Production</li>
+                        </ul>
+                    </div>
+                    <div class="p-8 pt-0 mt-auto">
+                        <button class="w-full bg-white/5 border border-white/10 text-white font-bold h-12 rounded-xl hover:bg-white/10 transition-colors">Coming Soon</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee Section -->
+    <section class="py-16 bg-primary/5 border-y border-primary/10">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-2xl mx-auto">
+                <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h2 class="text-2xl font-bold mb-4">30-Day Money-Back Guarantee</h2>
+                <p class="text-gray-400">Not completely satisfied with the course? Get a full refund within 30 days, no questions asked. We're confident you'll love the transformation and the professional skills you'll gain.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bonuses Section -->
+    <section class="py-20 bg-accent/5">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">Exclusive Bonuses</h2>
+                <p class="text-gray-400">Worth ₦75,000+ in value - yours free when you enroll today!</p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-background border border-white/5 p-6 rounded-xl reveal">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                            <span class="text-xl">🎯</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Client Acquisition Masterclass</h3>
+                            <div class="text-sm text-primary">Value: ₦25,000</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Learn proven strategies to find and land high-paying motion design clients on platforms like Upwork, Fiverr, and LinkedIn.</p>
+                </div>
+                <div class="bg-background border border-white/5 p-6 rounded-xl reveal delay-100">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
+                            <span class="text-xl">💰</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Pricing & Negotiation Guide</h3>
+                            <div class="text-sm text-accent">Value: ₦15,000</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">How to price your services competitively, negotiate with clients, and build a sustainable freelance business.</p>
+                </div>
+                <div class="bg-background border border-white/5 p-6 rounded-xl reveal delay-200">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
+                            <span class="text-xl">📱</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Mobile Studio Setup Guide</h3>
+                            <div class="text-sm text-primary">Value: ₦20,000</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Complete guide to setting up your mobile motion design studio with recommended apps, workflows, and productivity hacks.</p>
+                </div>
+                <div class="bg-background border border-white/5 p-6 rounded-xl reveal delay-300">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 bg-accent/20 rounded-lg flex items-center justify-center">
+                            <span class="text-xl">🚀</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold">Portfolio Building Workshop</h3>
+                            <div class="text-sm text-accent">Value: ₦15,000</div>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm">Step-by-step guide to creating a stunning portfolio that attracts high-quality clients and showcases your motion design skills.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 bg-black/50">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex items-center justify-center gap-2 mb-4">
+                <img src="mavinmintlogo.jpg" alt="Logo" class="h-6 w-6 rounded-full grayscale opacity-50" loading="lazy">
+                <span class="font-bold text-gray-500">Maven Mint Academy</span>
+            </div>
+            <p class="text-sm text-gray-600">© 2025 All rights reserved. Built by <a href="https://brandiecreative.netlify.app" target="_blank" class="text-primary hover:underline">Brandie Creative</a></p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        // Trigger once on load
+        reveal();
+    </script>
+</body>
+</html>
