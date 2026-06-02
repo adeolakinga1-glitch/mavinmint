@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap:https://mavenmint.netlify.app/sitemap.xml
