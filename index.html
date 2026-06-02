@@ -199,7 +199,7 @@
       gap: 8px;
       padding: 14px 36px;
       border-radius: 100px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 700;
       font-size: .9rem;
       letter-spacing: .04em;
@@ -419,12 +419,25 @@
     }
 
     .nav-logo {
+      position: relative;
       display: flex;
       align-items: center;
       gap: 10px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 800;
       font-size: 1.15rem;
+    }
+
+
+    .brand-logo {
+      width: 200px;
+      display: block;
+      animation: logo-float 5s ease-in-out infinite;
+    }
+
+    @keyframes logo-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
     }
 
     .logo-mark {
@@ -604,7 +617,7 @@
     }
 
     .hero-price {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 800;
       font-size: 1.6rem;
       display: flex;
@@ -688,7 +701,7 @@
     }
 
     .phone-app-title {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: .62rem;
       font-weight: 700;
       color: var(--cyan);
@@ -839,7 +852,7 @@
     }
 
     .stat-num {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 2.6rem;
       font-weight: 800;
       background: var(--grad);
@@ -2018,6 +2031,14 @@
         display: none;
       }
 
+      .nav-actions>a {
+        display: none;
+      }
+
+      .brand-logo {
+        width: 160px;
+      }
+
       .hamburger {
         display: flex;
       }
@@ -2211,7 +2232,6 @@
   <nav id="nav">
     <div class="nav-logo">
       <img src="./logo.png" alt="Maven Mint" class="brand-logo" />
-
     </div>
     <div class="nav-links">
       <a href="#about">About</a><a href="#modules">Modules</a><a href="#coach">Coach</a>
@@ -2239,7 +2259,7 @@
         <div class="hero-text">
           <div class="badge"><span class="pulse-dot"></span>Mavenmint Academy</div>
           <h1>Learn Motion Design With Your <span class="grad-text">Smartphone</span></h1>
-          <p class="hero-sub">Create stunning animations and professional motion designs for brands and companies
+          <p class="hero-sub">Create stunning animations and professional motion designs for brands and businesses
             &mdash; even if you're starting as a complete beginner.</p>
           <div class="hero-cta-row">
             <a href="#enroll" class="btn btn-primary btn-lg">Enroll Now <svg width="16" height="16" viewBox="0 0 24 24"
@@ -2247,8 +2267,7 @@
                 <line x1="5" y1="12" x2="19" y2="12" />
                 <polyline points="12 5 19 12 12 19" />
               </svg></a>
-            <div class="hero-price"><span class="grad-text">&#x20A6;50,000</span><small>one-time &middot; lifetime
-                access</small></div>
+            <div class="hero-price"><span class="grad-text">&#x20A6;50,000</span></div>
           </div>
           <div class="hero-trust">
             <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -2257,7 +2276,7 @@
                 <circle cx="9" cy="7" r="4" />
                 <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
                 <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-              </svg>600+ Students</div>
+              </svg>500+ Students</div>
             <div class="trust-item"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="2">
                 <rect x="5" y="2" width="14" height="20" rx="2" />
@@ -2305,7 +2324,7 @@
                   <span>9:41</span><span class="phone-app-title"></span><span>&#9679;&#9679;&#9679;</span>
                 </div>
                 <div class="phone-video-wrap">
-                  <img src="./Behind_the_scenes_of_how_this_animation_was_created_using_a_smartphone.gif" alt="">
+                  <img src="./Screenrecorder-2026-02-07-23-59-34-889.gif" alt="">
                 </div>
 
               </div>
@@ -2826,16 +2845,9 @@
           filter: none !important;
         }
 
+        /* Hide overlays on sample videos (play button, labels) */
         #samples .video-thumb .vt-overlay {
-          position: absolute;
-          inset: 0;
-          z-index: 2;
-          display: flex;
-          flex-direction: column;
-          justify-content: flex-end;
-          padding: 14px;
-          pointer-events: none;
-          color: white;
+          display: none !important;
         }
 
         #samples .video-thumb .play-btn {
@@ -2849,89 +2861,33 @@
           }
         }
       </style>
-      <script src="https://fast.wistia.com/player.js" async></script>
       <div class="video-grid">
         <div class="video-thumb">
-          <div class="vt-bg">
-            <div class="vt-shape" style="width:180px;height:180px;background:rgba(0,100,200,.25);top:-40px;left:-40px;">
-            </div>
-            <div class="vt-shape"
-              style="width:120px;height:120px;background:rgba(0,200,150,.2);bottom:-20px;right:-20px;animation-delay:1s;">
-            </div>
-          </div>
+          <script src="https://fast.wistia.com/player.js" async></script>
           <script src="https://fast.wistia.com/embed/p0anrm2uqo.js" async type="module"></script>
-          <style>
-            wistia-player[media-id='p0anrm2uqo']:not(:defined) {
-              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/p0anrm2uqo/swatch');
-              display: block;
-              filter: blur(5px);
-              padding-top: 57.5%;
-            }
-          </style>
+          <style>wistia-player[media-id='p0anrm2uqo']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/p0anrm2uqo/swatch'); display: block; filter: blur(5px); padding-top:57.5%; }</style>
           <wistia-player media-id="p0anrm2uqo" aspect="1.7391304347826086"></wistia-player>
-          <div class="vt-overlay">
-            <div class="play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                <polygon points="5 3 19 12 5 21 5 3" />
-              </svg></div>
-            <div class="vt-label">Fintech Promo Video</div>
-            <div class="vt-sub">Aku Bank &middot; Week 01</div>
-          </div>
         </div>
 
         <div class="video-thumb">
-          <div class="vt-bg">
-            <div class="vt-shape"
-              style="width:200px;height:200px;background:rgba(160,80,255,.2);top:-60px;right:-40px;animation-delay:.5s;">
-            </div>
-            <div class="vt-shape"
-              style="width:100px;height:100px;background:rgba(255,140,0,.2);bottom:-10px;left:20px;animation-delay:1.5s;">
-            </div>
-          </div>
-          <script src="https://fast.wistia.com/embed/gwhevckas2.js" async type="module"></script>
-          <style>
-            wistia-player[media-id='gwhevckas2']:not(:defined) {
-              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/gwhevckas2/swatch');
-              display: block;
-              filter: blur(5px);
-              padding-top: 56.25%;
-            }
-          </style>
-          <wistia-player media-id="gwhevckas2" aspect="1.7777777777777777"></wistia-player>
-          <div class="vt-overlay">
-            <div class="play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                <polygon points="5 3 19 12 5 21 5 3" />
-              </svg></div>
-            <div class="vt-label">SaaS Explainer Video</div>
-            <div class="vt-sub">Nas.io &middot; Week 03</div>
-          </div>
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script src="https://fast.wistia.com/embed/mht0a4dite.js" async type="module"></script>
+          <style>wistia-player[media-id='mht0a4dite']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/mht0a4dite/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
+          <wistia-player media-id="mht0a4dite" aspect="1.7777777777777777"></wistia-player>
         </div>
 
         <div class="video-thumb">
-          <div class="vt-bg">
-            <div class="vt-shape"
-              style="width:160px;height:160px;background:rgba(0,200,255,.2);top:-30px;left:30%;animation-delay:1s;">
-            </div>
-            <div class="vt-shape"
-              style="width:140px;height:140px;background:rgba(255,80,120,.15);bottom:-30px;left:-20px;animation-delay:.3s;">
-            </div>
-          </div>
+          <script src="https://fast.wistia.com/player.js" async></script>
           <script src="https://fast.wistia.com/embed/gwhevckas2.js" async type="module"></script>
-          <style>
-            wistia-player[media-id='gwhevckas2']:not(:defined) {
-              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/gwhevckas2/swatch');
-              display: block;
-              filter: blur(5px);
-              padding-top: 56.25%;
-            }
-          </style>
+          <style>wistia-player[media-id='gwhevckas2']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/gwhevckas2/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style>
           <wistia-player media-id="gwhevckas2" aspect="1.7777777777777777"></wistia-player>
-          <div class="vt-overlay">
-            <div class="play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                <polygon points="5 3 19 12 5 21 5 3" />
-              </svg></div>
-            <div class="vt-label">Crypto Brand Video</div>
-            <div class="vt-sub">Kizzy Exchange &middot; Week 07</div>
-          </div>
+        </div>
+
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script src="https://fast.wistia.com/embed/cbhtt6f9kd.js" async type="module"></script>
+          <style>wistia-player[media-id='cbhtt6f9kd']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/cbhtt6f9kd/swatch'); display: block; filter: blur(5px); padding-top:56.67%; }</style>
+          <wistia-player media-id="cbhtt6f9kd" aspect="1.7647058823529411"></wistia-player>
         </div>
       </div>
     </div>
@@ -3109,63 +3065,111 @@
         <p>See projects and animations created by students who started exactly where you are today.</p>
       </div>
       <div class="student-work-grid">
-        <div class="sw-card">
-          <div class="sw-bg">
-            <div class="sw-circle" style="width:120px;height:120px;background:rgba(0,180,200,.3);top:-20px;left:-20px;">
-            </div>
-            <div class="sw-circle"
-              style="width:80px;height:80px;background:rgba(0,229,200,.2);bottom:20px;right:10px;animation-delay:1s;">
-            </div>
-          </div>
-          <div class="sw-overlay">
-            <div class="sw-label">Fintech Promo &middot; Student Work</div>
-            <div class="sw-sub">Week 01 Project</div>
+        <style>
+          /* Click-to-load YouTube placeholders inside student work */
+          #student-work .video-thumb {
+            position: relative;
+          }
+
+          .yt-placeholder {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .yt-playbtn {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, .6);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+          }
+
+          .yt-playbtn svg {
+            width: 28px;
+            height: 28px;
+          }
+        </style>
+
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/YAFxkqu0XBI?si=xzVGvLi67B-CM4zr"
+            data-id="YAFxkqu0XBI" style="background-image:url('https://img.youtube.com/vi/YAFxkqu0XBI/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
           </div>
         </div>
-        <div class="sw-card">
-          <div class="sw-bg">
-            <div class="sw-circle"
-              style="width:140px;height:140px;background:rgba(160,80,255,.25);top:-30px;right:-20px;animation-delay:.5s;">
-            </div>
-            <div class="sw-circle"
-              style="width:70px;height:70px;background:rgba(255,120,0,.2);bottom:10px;left:20px;animation-delay:1.5s;">
-            </div>
-          </div>
-          <div class="sw-overlay">
-            <div class="sw-label">Food Delivery &middot; Student Work</div>
-            <div class="sw-sub">Week 02 Project</div>
+
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/0dEj9-Kw8oE?si=WUHTGCPeSEo_73w6"
+            data-id="0dEj9-Kw8oE" style="background-image:url('https://img.youtube.com/vi/0dEj9-Kw8oE/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
           </div>
         </div>
-        <div class="sw-card">
-          <div class="sw-bg">
-            <div class="sw-circle"
-              style="width:100px;height:100px;background:rgba(0,200,255,.3);top:20px;left:30px;animation-delay:1s;">
-            </div>
-            <div class="sw-circle"
-              style="width:90px;height:90px;background:rgba(255,60,100,.2);bottom:-10px;right:-10px;animation-delay:.3s;">
-            </div>
-          </div>
-          <div class="sw-overlay">
-            <div class="sw-label">Crypto Brand &middot; Student Work</div>
-            <div class="sw-sub">Week 07 Project</div>
+
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/Bq_Z0Ex0SzQ?si=n9YLvRQb1iFW_ICM"
+            data-id="Bq_Z0Ex0SzQ" style="background-image:url('https://img.youtube.com/vi/Bq_Z0Ex0SzQ/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
           </div>
         </div>
-        <div class="sw-card">
-          <div class="sw-bg">
-            <div class="sw-circle"
-              style="width:130px;height:130px;background:rgba(0,229,200,.2);top:-20px;left:50%;animation-delay:.7s;">
-            </div>
-            <div class="sw-circle"
-              style="width:80px;height:80px;background:rgba(200,100,255,.2);bottom:10px;left:10px;animation-delay:2s;">
-            </div>
-          </div>
-          <div class="sw-overlay">
-            <div class="sw-label">SaaS Explainer &middot; Student Work</div>
-            <div class="sw-sub">Week 03 Project</div>
+
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/sWtbd-VIT6M?si=iMLsrfPb63htGlsG"
+            data-id="sWtbd-VIT6M" style="background-image:url('https://img.youtube.com/vi/sWtbd-VIT6M/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
           </div>
         </div>
       </div>
+
+      <script>
+        (function () {
+          function createIframe(src) {
+            var iframe = document.createElement('iframe');
+            var sep = src.indexOf('?') === -1 ? '?' : '&';
+            var srcWith = src + sep + 'enablejsapi=1&autoplay=1';
+            iframe.setAttribute('src', srcWith);
+            iframe.setAttribute('frameborder', '0');
+            iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+            iframe.setAttribute('allowfullscreen', '');
+            iframe.style.position = 'absolute'; iframe.style.inset = '0'; iframe.style.width = '100%'; iframe.style.height = '100%'; iframe.style.border = '0';
+            return iframe;
+          }
+
+          document.querySelectorAll('#student-work .yt-placeholder').forEach(function (p) {
+            p.addEventListener('click', function () {
+              var src = p.getAttribute('data-src'); if (!src) return;
+              var parent = p.parentElement;
+              var iframe = createIframe(src);
+              parent.appendChild(iframe);
+              p.remove();
+              // register dynamic iframe with YouTube init helper if available
+              if (window.initYTIframe) window.initYTIframe(iframe);
+              // If YT API already available but init helper not set, try to initialize directly
+              if (window.YT && !window.initYTIframe && typeof window.onYouTubeIframeAPIReady === 'function') { try { window.onYouTubeIframeAPIReady(); } catch (e) { } }
+            });
+          });
+        })();
+      </script>
     </div>
+    <p style="text-align:center;color:var(--muted);margin-top:12px;font-size:.95rem;">For more student videos, visit our
+      <a href="https://www.youtube.com/playlist?list=PLNZaB3bRI8wXcSjxkkmuoDq0u4cKb-pWd" target="_blank"
+        rel="noopener noreferrer">YouTube playlist</a>.</p>
   </section>
 
   <!-- TESTIMONIALS -->
@@ -3174,7 +3178,7 @@
       <div class="section-header center">
         <div class="section-label">Student Results</div>
         <h2>What Students Are <span class="grad-text">Saying &amp; Earning</span></h2>
-        <p>Students are not just learning a skill &mdash; they are applying it and getting results. Over 600 students
+        <p>Students are not just learning a skill &mdash; they are applying it and getting results. Over 500 students
           have already enrolled and achieved remarkable things.</p>
       </div>
       <div class="testimonials-grid">
@@ -3221,7 +3225,7 @@
       <div
         style="text-align:center;margin-top:36px;padding:24px 32px;background:rgba(0,229,200,.05);border:1px solid var(--border);border-radius:var(--r);max-width:600px;margin-inline:auto;">
         <p style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:6px;">
-          Join 600+ students already earning</p>
+          Join 500+ students already earning</p>
         <p style="font-size:.85rem;color:var(--muted);">From working with top brands and earning in both Naira and
           dollars, to creating stunning motion designs entirely on their smartphones.</p>
       </div>
@@ -3284,6 +3288,60 @@
 
   <div class="divider"></div>
 
+  <script>
+    (function () {
+      // Ensure only one video plays at a time: HTML5, YouTube iframes in #student-work, and Wistia embeds
+      function getHtmlVideos() { return Array.from(document.querySelectorAll('video')); }
+      var ytPlayers = [];
+      var wistiaPlayers = [];
+
+      function pauseAllExcept(source) {
+        // Pause HTML5 videos
+        getHtmlVideos().forEach(function (v) { try { if (v !== source && !v.paused) v.pause(); } catch (e) { } });
+
+        // Pause YouTube players
+        ytPlayers.forEach(function (p) { try { if (p && typeof p.getPlayerState === 'function' && p !== source) { if (p.getPlayerState() === YT.PlayerState.PLAYING) p.pauseVideo(); } } catch (e) { } });
+
+        // Pause Wistia players
+        wistiaPlayers.forEach(function (w) { try { if (w !== source) w.pause(); } catch (e) { } });
+      }
+
+      // HTML5 play -> pause others
+      document.addEventListener('play', function (e) { if (e.target && e.target.tagName === 'VIDEO') pauseAllExcept(e.target); }, true);
+
+      // Setup YouTube iframe API for student-work iframes
+      var ytIframes = Array.from(document.querySelectorAll('#student-work iframe[src*="youtube.com/embed"]'));
+      if (ytIframes.length) {
+        if (!window.YT) { var tag = document.createElement('script'); tag.src = 'https://www.youtube.com/iframe_api'; document.head.appendChild(tag); }
+        function initYTIframe(iframe) {
+          try {
+            var player = new YT.Player(iframe, {
+              events: {
+                'onStateChange': function (event) { if (event.data === YT.PlayerState.PLAYING) pauseAllExcept(player); }
+              }
+            });
+            ytPlayers.push(player);
+            return player;
+          } catch (e) { return null; }
+        }
+
+        window.initYTIframe = initYTIframe;
+        window.pauseAllExcept = pauseAllExcept;
+        window.registerWistiaPlayer = function (player) { try { wistiaPlayers.push(player); } catch (e) { } };
+
+        window.onYouTubeIframeAPIReady = function () {
+          var currentIframes = Array.from(document.querySelectorAll('#student-work iframe[src*="youtube.com/embed"]'));
+          ytPlayers = currentIframes.map(function (iframe) { return initYTIframe(iframe); }).filter(Boolean);
+        };
+      }
+
+      // Wistia: bind play events via _wq
+      window._wq = window._wq || [];
+      var wistiaEls = Array.from(document.querySelectorAll('wistia-player[media-id]'));
+      wistiaEls.forEach(function (el) { var id = el.getAttribute('media-id'); if (!id) return; window._wq.push({ id: id, onReady: function (video) { wistiaPlayers.push(video); try { video.bind('play', function () { pauseAllExcept(video); }); } catch (e) { } } }); });
+    })();
+  </script>
+
   <!-- COACH -->
   <section class="section section-alt" id="coach">
     <div class="container">
@@ -3298,7 +3356,7 @@
           </div>
           <div class="coach-stats-row">
             <div class="coach-stat"><strong>4+</strong><span>Years Experience</span></div>
-            <div class="coach-stat"><strong>600+</strong><span>Students Mentored</span></div>
+            <div class="coach-stat"><strong>500+</strong><span>Students Mentored</span></div>
           </div>
         </div>
         <div class="coach-text">
@@ -3430,11 +3488,12 @@
         <div class="badge" style="margin-bottom:24px;justify-content:center;"><span class="pulse-dot"></span>Enrollment
           Open Now</div>
         <h2>Ready to Start Your <span class="grad-text">Motion Design Journey?</span></h2>
-        <p>You don't need experience to start. You just need the right guide. Enroll today and join over 600 students
+        <p>You don't need experience to start. You just need the right guide. Enroll today and join over 500 students
           learning motion design using just their smartphone.</p>
         <div class="cta-price-big"><span class="grad-text">&#x20A6;50,000</span></div>
-        <a href="https://selar.com/motionessential" target="_blank" class="btn btn-primary btn-lg">Enroll in Motion Design Essential <svg width="16" height="16"
-            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <a href="https://selar.com/motionessential" target="_blank" class="btn btn-primary btn-lg">Enroll in Motion
+          Design Essential <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+            stroke-width="2.5">
             <line x1="5" y1="12" x2="19" y2="12" />
             <polyline points="12 5 19 12 12 19" />
           </svg></a>
@@ -3530,12 +3589,23 @@
           </div>
           <div class="info-card">
             <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
-                <circle cx="12" cy="10" r="3" />
+                <rect x="3" y="6" width="18" height="12" rx="3" />
+                <path d="M10 9.5l6 3.5-6 3.5V9.5z" />
               </svg></div>
             <div>
-              <h4>Location</h4>
-              <p>Lagos State, Nigeria</p>
+              <h4>YouTube</h4>
+              <a href="https://www.youtube.com/@maven-mint" target="_blank" rel="noopener noreferrer">@maven-mint</a>
+            </div>
+          </div>
+          <div class="info-card">
+            <div class="icon-box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="3" width="18" height="18" rx="5" />
+                <circle cx="12" cy="12" r="4.5" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+              </svg></div>
+            <div>
+              <h4>Instagram</h4>
+              <a href="https://www.instagram.com/mavenmint/" target="_blank" rel="noopener noreferrer">@mavenmint</a>
             </div>
           </div>
           <button class="whatsapp-btn" onclick="window.open('https://wa.me/2349124589279','_blank')">
@@ -3604,7 +3674,8 @@
         </div>
       </div>
       <div class="footer-bottom"><span>&copy; 2025 Mavenmint Academy. All rights reserved.</span><span
-          style="color:var(--muted2);">Motion Design Institute &middot; Lagos, Nigeria</span></div>
+          style="color:var(--muted2);">Motion Design Institute &middot; Lagos, Nigeria</span><span
+          style="color:var(--muted2);">Designed by <a href="https://brandiecreative.netlify.app/" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:underline;">Brandie Creative</a></span></div>
     </div>
   </footer>
 
