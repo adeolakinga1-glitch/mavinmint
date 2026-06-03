@@ -2330,6 +2330,30 @@
     .stat-num {
       will-change: contents;
     }
+
+    /* Prominent playlist link/button */
+    .playlist-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 0 5px;
+      border-radius: 12px;
+      background: var(--grad);
+      color: var(--dark);
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: 0 12px 40px rgba(1, 255, 169, .12);
+      transition: transform .18s, box-shadow .18s, opacity .18s;
+    }
+
+    .playlist-link:hover,
+    .playlist-link:focus {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 60px rgba(1, 255, 169, .14);
+      opacity: 0.98;
+    }
+
+    .playlist-link svg { width: 18px; height: 18px; flex-shrink: 0; }
   </style>
 </head>
 
@@ -3379,9 +3403,10 @@
         })();
       </script>
     </div>
-    <p style="text-align:center;color:var(--muted);margin-top:12px;font-size:.95rem;">For more student videos, visit our
-      <a href="https://www.youtube.com/playlist?list=PLNZaB3bRI8wXcSjxkkmuoDq0u4cKb-pWd" target="_blank"
-        rel="noopener noreferrer">YouTube playlist</a>.
+    <p style="text-align:center;color:var(--muted);margin-top:12px;font-size:.95rem;">For more student videos, visit our <br>
+      <a class="playlist-link" href="https://www.youtube.com/playlist?list=PLNZaB3bRI8wXcSjxkkmuoDq0u4cKb-pWd" target="_blank" rel="noopener noreferrer" aria-label="Open our YouTube playlist in a new tab">
+        YouTube playlist
+      </a>
     </p>
   </section>
 
@@ -3543,9 +3568,10 @@
             }
           </style> <wistia-player media-id="puvn3iowgm" aspect="0.5625"></wistia-player>
         </div>
-        <p style="text-align:center;color:var(--muted);margin-top:24px;font-size:.85rem;">Play each testimonial to hear
-          how students are applying the training in real projects.</p>
+        
       </div>
+      <p style="text-align:center;color:var(--muted);margin-top:24px;font-size:.85rem;">Play each testimonial to hear
+          how students are applying the training in real projects.</p>
   </section>
 
   <div class="divider"></div>
