@@ -43,8 +43,7 @@
   </script>
   <title>Mavenmint Academy | Motion Design Institute</title>
   <link rel="icon" type="image/png" href="./logo-mark.png" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@300;400;500;600;700;800&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
     rel="stylesheet" />
   <style>
     :root {
@@ -470,7 +469,6 @@
     .brand-logo {
       width: 200px;
       display: block;
-      animation: logo-float 5s ease-in-out infinite;
     }
 
     @keyframes logo-float {
@@ -1384,7 +1382,7 @@
 
     .student-work-grid {
       display: grid;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
 
@@ -1453,7 +1451,7 @@
       position: absolute;
       top: 10px;
       left: 22px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 4.5rem;
       color: var(--cyan);
       opacity: .22;
@@ -1461,7 +1459,7 @@
     }
 
     .testi-amount {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 1.35rem;
       font-weight: 800;
       background: var(--grad);
@@ -1602,7 +1600,7 @@
 
     .coach-stat strong {
       display: block;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 1.35rem;
       font-weight: 800;
       background: var(--grad);
@@ -1663,7 +1661,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: .9rem;
       font-weight: 700;
       color: var(--text);
@@ -1763,7 +1761,7 @@
     }
 
     .cta-price-big {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: clamp(2.5rem, 5vw, 4rem);
       font-weight: 800;
       margin-bottom: 36px;
@@ -1912,7 +1910,7 @@
       border: none;
       border-radius: var(--r-sm);
       padding: 15px 20px;
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 700;
       font-size: .88rem;
       cursor: pointer;
@@ -1950,7 +1948,7 @@
     }
 
     .footer-col h5 {
-      font-family: 'Syne', sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: .76rem;
       font-weight: 700;
       letter-spacing: .1em;
@@ -1986,6 +1984,48 @@
     .social-links {
       display: flex;
       gap: 10px;
+    }
+
+    .instagram-chat-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #f58529 0%, #dd2a7b 50%, #833ab4 100%);
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 16px rgba(232, 64, 87, .3);
+      transition: transform .3s, box-shadow .3s;
+      z-index: 999;
+    }
+
+    .instagram-chat-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 6px 24px rgba(232, 64, 87, .4);
+    }
+
+    .instagram-chat-btn svg {
+      width: 28px;
+      height: 28px;
+    }
+
+    @media (max-width: 600px) {
+      .instagram-chat-btn {
+        bottom: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .instagram-chat-btn svg {
+        width: 24px;
+        height: 24px;
+      }
     }
 
     .social-link {
@@ -2274,6 +2314,14 @@
 </head>
 
 <body>
+  <a class="instagram-chat-btn" href="https://www.instagram.com/mavenmint/" target="_blank" rel="noopener noreferrer"
+    title="Chat with us on Instagram" aria-label="Chat with us on Instagram">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+      <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+      <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+    </svg>
+  </a>
   <nav id="nav">
     <div class="nav-logo">
       <img src="./logo.png" alt="Maven Mint" class="brand-logo" />
@@ -2477,7 +2525,7 @@
                 </svg></div>
               <div class="about-item-text">
                 <h4>Real Brands, Real Projects</h4>
-                <p>Create 11 complete motion design videos for real brands across Fintech, Crypto, SaaS, E-commerce, and
+                <p>Create 21 complete motion design videos for real brands across Fintech, Crypto, SaaS, E-commerce, and
                   more.</p>
               </div>
             </div>
@@ -2505,7 +2553,8 @@
       <div class="section-header">
         <div class="section-label">Course Curriculum</div>
         <h2>13 Modules to Build Your <span class="grad-text">Complete Skillset</span></h2>
-        <p>From foundational theory to hands-on practicals &mdash; every module is designed to move you forward.</p>
+        <p>From foundational theory to hands-on practicals &mdash; every module is designed to make sure that you gain
+          mastery. </p>
       </div>
       <div class="modules-grid">
         <div class="card module-card">
@@ -2803,7 +2852,7 @@
           <ul class="mod-outline hidden">
             <li>Types of Promotional Videos</li>
             <li>Script Writing &amp; Storyboarding</li>
-            <li>Collecting Assets — Images, UI, Icons</li>
+            <li>Creating videos for Fintech, Ai, Crypto and SaaS brands</li>
             <li>Applying Motion Design Principles</li>
             <li>Sound Design and Voice Over Integration</li>
             <li>Exporting for Instagram, YouTube, and Ads</li>
@@ -2826,11 +2875,11 @@
             </svg></button>
           <ul class="mod-outline hidden">
             <li>Why a Strong Portfolio Matters</li>
-            <li>Selecting Your Best Works</li>
+            <li>creating your showreel</li>
             <li>Branding Yourself as a Motion Designer</li>
             <li>Platforms for Your Portfolio</li>
-            <li>Ways to Earn — Freelance, Clients, Content</li>
-            <li>How to Create Your Rate Card</li>
+            <li>Ways to Earn — Freelance, email marketing, Content</li>
+            <li>How to create your rate card and invoice</li>
           </ul>
         </div>
       </div>
@@ -2989,7 +3038,7 @@
           <li class="benefit-item"><span class="benefit-check"><svg viewBox="0 0 24 24" fill="none" stroke="var(--dark)"
                 stroke-width="3.5">
                 <polyline points="20 6 9 17 4 12" />
-              </svg></span><span><strong>Practical assignments and projects</strong> &mdash; 11 real brand videos built
+              </svg></span><span><strong>Practical assignments and projects</strong> &mdash; 21 real brand videos built
               from scratch</span></li>
           <li class="benefit-item"><span class="benefit-check"><svg viewBox="0 0 24 24" fill="none" stroke="var(--dark)"
                 stroke-width="3.5">
@@ -3129,13 +3178,13 @@
 
   <div class="divider"></div>
 
-  <!-- STUDENT WORK -->
+  <!-- SHOW REEL -->
   <section class="section section-alt" id="student-work">
     <div class="container">
       <div class="section-header center">
-        <div class="section-label">Student Work</div>
-        <h2>From Beginner Projects to <span class="grad-text">Professional Motion Designs</span></h2>
-        <p>See projects and animations created by students who started exactly where you are today.</p>
+        <div class="section-label">Show Reel</div>
+        <h2>Watch the <span class="grad-text">Maven Mint Show Reel</span></h2>
+        <p>Enjoy our latest motion design showcase, powered by YouTube Shorts and made on smartphones.</p>
       </div>
       <div class="student-work-grid">
         <style>
@@ -3174,8 +3223,8 @@
         </style>
 
         <div class="video-thumb">
-          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/YAFxkqu0XBI?si=xzVGvLi67B-CM4zr"
-            data-id="YAFxkqu0XBI" style="background-image:url('https://img.youtube.com/vi/YAFxkqu0XBI/hqdefault.jpg')">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/qWC9DYZ7GO0?si=YgYXs0i8GpYw-Ijg"
+            data-id="qWC9DYZ7GO0" style="background-image:url('https://img.youtube.com/vi/qWC9DYZ7GO0/hqdefault.jpg')">
             <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
                 <polygon points="5 3 19 12 5 21" />
               </svg></button>
@@ -3183,7 +3232,25 @@
         </div>
 
         <div class="video-thumb">
-          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/0dEj9-Kw8oE?si=WUHTGCPeSEo_73w6"
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/s9GQwipNVnA?si=Arb72LQi8vyKksPU"
+            data-id="s9GQwipNVnA" style="background-image:url('https://img.youtube.com/vi/s9GQwipNVnA/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
+          </div>
+        </div>
+
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/mesMps2b8ZI?si=oc9WPq3STe9wusd3"
+            data-id="mesMps2b8ZI" style="background-image:url('https://img.youtube.com/vi/mesMps2b8ZI/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
+          </div>
+        </div>
+
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/0dEj9-Kw8oE?si=sIy_L8e0a7SKgTP-"
             data-id="0dEj9-Kw8oE" style="background-image:url('https://img.youtube.com/vi/0dEj9-Kw8oE/hqdefault.jpg')">
             <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
                 <polygon points="5 3 19 12 5 21" />
@@ -3192,8 +3259,8 @@
         </div>
 
         <div class="video-thumb">
-          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/Bq_Z0Ex0SzQ?si=n9YLvRQb1iFW_ICM"
-            data-id="Bq_Z0Ex0SzQ" style="background-image:url('https://img.youtube.com/vi/Bq_Z0Ex0SzQ/hqdefault.jpg')">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/UMteAgd0imY?si=CpBYZ10iF_Z0lbUj"
+            data-id="UMteAgd0imY" style="background-image:url('https://img.youtube.com/vi/UMteAgd0imY/hqdefault.jpg')">
             <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
                 <polygon points="5 3 19 12 5 21" />
               </svg></button>
@@ -3201,7 +3268,7 @@
         </div>
 
         <div class="video-thumb">
-          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/sWtbd-VIT6M?si=iMLsrfPb63htGlsG"
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/sWtbd-VIT6M?si=V6GF74r_qfNkQTQw"
             data-id="sWtbd-VIT6M" style="background-image:url('https://img.youtube.com/vi/sWtbd-VIT6M/hqdefault.jpg')">
             <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
                 <polygon points="5 3 19 12 5 21" />
@@ -3257,48 +3324,52 @@
       </div>
       <div class="testimonials-grid">
         <div class="card testi-card">
-          <div class="testi-amount">&#x20A6;300,000/month</div>
-          <p class="testi-text">A client reached out to me from LinkedIn regarding a position at their company. I had a
-            consultation call with the Managing Director and got the job &mdash; &#x20A6;300k per month. I'm truly
-            excited and I wouldn't have been able to get this job without registering for this course.</p>
+          <div class="testi-amount">Dell PC &mdash; ₦1.3M</div>
+          <p class="testi-text">I just purchased a brand-new Dell PC worth ₦1.3 million. If someone had told me last
+            year that I would be able to achieve this through my motion design skill, I probably wouldn't have believed
+            it. But today, it has become a reality. Thank you so much for your guidance, mentorship, and teachings
+            throughout this journey. God bless you, Coach.</p>
           <div class="testi-author">
-            <div class="testi-avatar">ST</div>
+            <div class="testi-avatar">01</div>
             <div>
               <div class="testi-name">Motion Design Student</div>
-              <div class="testi-role">Landed a full-time role via LinkedIn</div>
+              <div class="testi-role">Purchased new device via motion design earnings</div>
             </div>
           </div>
         </div>
         <div class="card testi-card">
-          <div class="testi-amount">$250 Deal Closed</div>
-          <p class="testi-text">Closed a $250 deal with a client to create 4 motion graphics videos monthly. The client
-            made part payment this evening. Thank you Coach Femi! I'm currently at 600k in agreements across multiple
-            clients.</p>
+          <div class="testi-amount">Tecno Spark &mdash; ₦273K</div>
+          <p class="testi-text">I got a new device last week, a Tecno Spark 40 Pro Plus worth ₦273,000. I just want to
+            say a big thank you to you and Maven Mint for making this possible. This feels like a dream come true for
+            me, and I'm truly grateful for all the support, guidance, and knowledge you've shared over the years. Thank
+            you so much, sir. I'm grateful.</p>
           <div class="testi-author">
-            <div class="testi-avatar">AO</div>
+            <div class="testi-avatar">02</div>
             <div>
               <div class="testi-name">Motion Design Student</div>
-              <div class="testi-role">Freelance motion designer</div>
+              <div class="testi-role">Achieved device upgrade goal</div>
             </div>
           </div>
         </div>
         <div class="card testi-card">
-          <div class="testi-amount">$400/month &mdash; Web3</div>
-          <p class="testi-text">Coach, I just closed a gig with a Web3 project! They reached out through a graphic
-            designer friend and wanted me on a monthly basis. We agreed on $400 and they just sent the part payment this
-            morning.</p>
+          <div class="testi-amount">Tecno Spark &mdash; ₦273K</div>
+          <p class="testi-text">I got a new device last week, a Tecno Spark 40 Pro Plus worth ₦273,000. I just want to
+            say a big thank you to you and Maven Mint for making this possible. This feels like a dream come true for
+            me, and I'm truly grateful for all the support, guidance, and knowledge you've shared over the years. Thank
+            you so much, sir. I'm grateful.</p>
           <div class="testi-author">
-            <div class="testi-avatar">MK</div>
+            <div class="testi-avatar">03</div>
             <div>
               <div class="testi-name">Motion Design Student</div>
-              <div class="testi-role">Working with Web3 brands monthly</div>
+              <div class="testi-role">Achieved device upgrade goal</div>
             </div>
           </div>
         </div>
       </div>
       <div
         style="text-align:center;margin-top:36px;padding:24px 32px;background:rgba(0,229,200,.05);border:1px solid var(--border);border-radius:var(--r);max-width:600px;margin-inline:auto;">
-        <p style="font-family:'Syne',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:6px;">
+        <p
+          style="font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:700;color:var(--text);margin-bottom:6px;">
           Join 500+ students already earning</p>
         <p style="font-size:.85rem;color:var(--muted);">From working with top brands and earning in both Naira and
           dollars, to creating stunning motion designs entirely on their smartphones.</p>
@@ -3315,19 +3386,6 @@
         <p>Watch short testimonial videos from students who turned course lessons into real motion design results.</p>
       </div>
       <div class="video-grid">
-        <div class="video-thumb">
-          <video controls playsinline preload="metadata">
-            <source src="./Testimonials [FC8CE8E].mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div class="vt-overlay">
-            <div class="play-btn"><svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-                <polygon points="5 3 19 12 5 21 5 3" />
-              </svg></div>
-            <div class="vt-label">From Zero to Client Work</div>
-            <div class="vt-sub">Student Testimonial &middot; Motion Design Journey</div>
-          </div>
-        </div>
         <div class="video-thumb">
           <video controls playsinline preload="metadata">
             <source src="./Testimonials [AAC125C].mp4" type="video/mp4" />
@@ -3354,10 +3412,57 @@
             <div class="vt-sub">Student Feedback &middot; Course Experience</div>
           </div>
         </div>
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script src="https://fast.wistia.com/embed/3py4k12bjs.js" async type="module"></script>
+          <style>
+            wistia-player[media-id='3py4k12bjs']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/3py4k12bjs/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 177.78%;
+            }
+          </style> <wistia-player media-id="3py4k12bjs" aspect="0.5625"></wistia-player>
+        </div>
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script src="https://fast.wistia.com/embed/yjw1z40jn6.js" async type="module"></script>
+          <style>
+            wistia-player[media-id='yjw1z40jn6']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/yjw1z40jn6/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 177.78%;
+            }
+          </style> <wistia-player media-id="yjw1z40jn6" aspect="0.5625"></wistia-player>
+        </div>
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script src="https://fast.wistia.com/embed/yjw1z40jn6.js" async type="module"></script>
+          <style>
+            wistia-player[media-id='yjw1z40jn6']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/yjw1z40jn6/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 177.78%;
+            }
+          </style> <wistia-player media-id="yjw1z40jn6" aspect="0.5625"></wistia-player>
+        </div>
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script src="https://fast.wistia.com/embed/puvn3iowgm.js" async type="module"></script>
+          <style>
+            wistia-player[media-id='puvn3iowgm']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/puvn3iowgm/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 177.78%;
+            }
+          </style> <wistia-player media-id="puvn3iowgm" aspect="0.5625"></wistia-player>
+        </div>
+        <p style="text-align:center;color:var(--muted);margin-top:24px;font-size:.85rem;">Play each testimonial to hear
+          how students are applying the training in real projects.</p>
       </div>
-      <p style="text-align:center;color:var(--muted);margin-top:24px;font-size:.85rem;">Play each testimonial to hear
-        how students are applying the training in real projects.</p>
-    </div>
   </section>
 
   <div class="divider"></div>
@@ -3447,8 +3552,9 @@
             designs using just your smartphone &mdash; while building a skill that creates earning opportunities for
             yourself.</p>
           <div class="coach-tags"><span class="coach-tag">Motion Design</span><span class="coach-tag">Creative
-              Direction</span><span class="coach-tag">UI Animation</span><span class="coach-tag">SaaS &amp;
-              Fintech</span><span class="coach-tag">AI Tools</span><span class="coach-tag">Explainer Videos</span></div>
+              Direction</span><span class="coach-tag">SaaS &dash; Fintech</span><span
+              class="coach-tag">Animator</span><span class="coach-tag">Founder</span><span
+              class="coach-tag">Mentor</span></div>
         </div>
       </div>
     </div>
@@ -3476,8 +3582,8 @@
                 <line x1="12" y1="5" x2="12" y2="19" />
                 <line x1="5" y1="12" x2="19" y2="12" />
               </svg></span></button>
-          <div class="faq-a">No. Everything is done on your smartphone. The tools we use &mdash; Alight Motion and
-            CapCut &mdash; work perfectly on both Android and iPhone.</div>
+          <div class="faq-a"> Everything is done on your smartphone. The tools we use, Alight Motion and CapCut, work
+            perfectly on both Android and iPhone.</div>
         </div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I use an iPhone or iPad?<span
               class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
@@ -3515,24 +3621,7 @@
           <div class="faq-a">The course is self-paced &mdash; you have access to every lesson and material immediately.
             You can start today and complete it in about a month, depending on your consistency.</div>
         </div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Do I get a certificate?<span
-              class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="3">
-                <line x1="12" y1="5" x2="12" y2="19" />
-                <line x1="5" y1="12" x2="19" y2="12" />
-              </svg></span></button>
-          <div class="faq-a">Yes. You receive a professional certificate from Mavenmint Academy upon successful
-            completion, which you can add to your portfolio and LinkedIn profile.</div>
-        </div>
-        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I earn from this skill?<span
-              class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                stroke-width="3">
-                <line x1="12" y1="5" x2="12" y2="19" />
-                <line x1="5" y1="12" x2="19" y2="12" />
-              </svg></span></button>
-          <div class="faq-a">Absolutely. Many students use the skill for freelance work, content creation, and client
-            projects &mdash; earning in both Naira and US Dollars from brands locally and internationally.</div>
-        </div>
+
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is access to the community lifetime?<span
               class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                 stroke-width="3">
@@ -3550,6 +3639,45 @@
               </svg></span></button>
           <div class="faq-a">That's the perfect starting point. The course is built specifically for that stage &mdash;
             every concept is explained clearly from the very beginning with no assumptions about prior knowledge.</div>
+        </div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is Maven Mint about?<span
+              class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="3">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-a">Maven Mint Academy is focused on teaching people how to create industry-standard motion
+            graphics and animations using just their smartphones. The goal is to make motion design accessible and help
+            people build valuable skills they can use to earn from brands and businesses globally.</div>
+        </div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is the academy virtual or physical?<span
+              class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="3">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-a">The academy is fully virtual. You can learn from the comfort of your home or anywhere in
+            the world as long as you have a smartphone and internet access. All tutorials and learning resources are
+            available online. However, a physical academy may be introduced in the future, but for now, everything is
+            virtual.</div>
+        </div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Can I pay in installments?<span
+              class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="3">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-a">Yes, installment payments are allowed. Once you make your first payment, you will be added
+            to a group where you will receive updates and onboarding information about the course.</div>
+        </div>
+        <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">What is the least amount for
+            installment?<span class="faq-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="3">
+                <line x1="12" y1="5" x2="12" y2="19" />
+                <line x1="5" y1="12" x2="19" y2="12" />
+              </svg></span></button>
+          <div class="faq-a">The minimum deposit to start is ₦25,000. The total course fee is ₦50,000, and it can be
+            paid in two installments to make it more convenient for you to enroll.</div>
         </div>
       </div>
     </div>
@@ -3648,7 +3776,7 @@
                 <polyline points="22,6 12,13 2,6" />
               </svg></div>
             <div>
-              <h4>Email</h4><a href="mailto:support@mavenmint.com">support@mavenmint.com</a>
+              <h4>Email</h4><a href="mailto:hellomavenmint@gmail.com">hellomavenmint@gmail.com</a>
               <p style="font-size:.72rem;color:var(--muted2);margin-top:3px;">Response within 24 hours</p>
             </div>
           </div>
@@ -3658,7 +3786,7 @@
                   d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 9.91a16 16 0 0 0 6.1 6.1l1.27-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
               </svg></div>
             <div>
-              <h4>Phone / WhatsApp</h4><a href="tel:+2349124589279">+234 912 458 9279</a>
+              <h4>Phone </h4><a href="tel:+2349124589279">+234 912 458 9279</a>
             </div>
           </div>
           <div class="info-card">
@@ -3687,8 +3815,14 @@
               <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
             </svg>
-            Chat on WhatsApp &middot; +234 912 458 9279
-          </button>
+            Chat on WhatsApp
+            <button class="whatsapp-btn" onclick="window.open('https://calendly.com/mavenmint','_blank')">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+                <path
+                  d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zm-5-9h-4v4h4v-4z" />
+              </svg>
+              Book A Consultation Call
+            </button>
         </div>
       </div>
     </div>
@@ -3708,27 +3842,36 @@
           <p>The Motion Design Institute for smartphone creators. Building industry-ready skills, one project at a time.
           </p>
           <div class="social-links" style="margin-top:20px;">
-            <a class="social-link" href="#" aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2">
+            <a class="social-link" href="https://www.instagram.com/mavenmint/" target="_blank" rel="noopener noreferrer"
+              aria-label="Instagram"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
                 <rect x="2" y="2" width="20" height="20" rx="5" />
                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
               </svg></a>
-            <a class="social-link" href="#" aria-label="X / Twitter"><svg width="14" height="14" viewBox="0 0 24 24"
-                fill="currentColor">
+            <a class="social-link" href="https://x.com/mavenmint_" target="_blank" rel="noopener noreferrer"
+              aria-label="X / Twitter"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
                 <path
                   d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.843L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
               </svg></a>
-            <a class="social-link" href="#" aria-label="YouTube"><svg width="15" height="15" viewBox="0 0 24 24"
-                fill="none" stroke="currentColor" stroke-width="2">
+            <a class="social-link" href="https://www.youtube.com/@maven-mint" target="_blank" rel="noopener noreferrer"
+              aria-label="YouTube"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2">
                 <path
                   d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
                 <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" />
               </svg></a>
-            <a class="social-link" href="#" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24"
+            <a class="social-link" href="https://www.tiktok.com/@mavenmint_?_r=1&_t=ZS-96t1j1FEn0m" target="_blank"
+              rel="noopener noreferrer" aria-label="TikTok"><svg width="14" height="14" viewBox="0 0 24 24"
                 fill="currentColor">
                 <path
                   d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.23 8.23 0 004.83 1.55V6.79a4.85 4.85 0 01-1.06-.1z" />
+              </svg></a>
+            <a class="social-link" href="https://www.linkedin.com/company/maven-mint/" target="_blank"
+              rel="noopener noreferrer" aria-label="LinkedIn"><svg width="15" height="15" viewBox="0 0 24 24"
+                fill="currentColor">
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.474-2.237-1.776-2.237-1.088 0-1.739.732-2.027 1.438-.104.252-.13.604-.13.956v5.412h-3.554s.05-8.736 0-9.646h3.554v1.364c.429-.629 1.189-1.523 2.882-1.523 2.105 0 3.684 1.375 3.684 4.331v5.474zM5.337 8.855a2.069 2.069 0 11-.001-4.138 2.069 2.069 0 01.001 4.138zm1.782 11.597H3.555V9.906h3.564v10.546zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.225 0z" />
               </svg></a>
           </div>
         </div>
@@ -3741,10 +3884,9 @@
             href="#student-work">Student Work</a><a href="#faq">FAQ</a>
         </div>
         <div class="footer-col">
-          <h5>Contact</h5><a href="mailto:support@mavenmint.com">support@mavenmint.com</a><a
+          <h5>Contact</h5><a href="mailto:hellomavenmint@gmail.com">hellomavenmint@gmail.com</a><a
             href="tel:+2349124589279">+234 912 458 9279</a><a href="#contact">Contact Form</a><a
-            href="https://wa.me/2349124589279" target="_blank">WhatsApp Us</a><span
-            style="font-size:.72rem;color:var(--muted2);margin-top:4px;display:block;">Lagos, Nigeria</span>
+            href="https://wa.me/2349124589279" target="_blank">WhatsApp Us</a>
         </div>
       </div>
       <div class="footer-bottom"><span>&copy; 2025 Mavenmint Academy. All rights reserved.</span><span
