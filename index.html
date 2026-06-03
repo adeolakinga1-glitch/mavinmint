@@ -2312,6 +2312,25 @@
       }
     }
   </style>
+  <style>
+    /* Section reveal animation */
+    .section {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s cubic-bezier(.2,.9,.2,1), transform .7s cubic-bezier(.2,.9,.2,1);
+      will-change: opacity, transform;
+    }
+
+    .section.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Slight fade for stat numbers so they don't jump */
+    .stat-num {
+      will-change: contents;
+    }
+  </style>
 </head>
 
 <body>
@@ -3530,6 +3549,75 @@
   </section>
 
   <div class="divider"></div>
+  <div class="divider"></div>
+
+  <script>
+  (function(){
+    function easeOutCubic(t){ return 1 - Math.pow(1 - t, 3); }
+    document.addEventListener('DOMContentLoaded', function(){
+      // Reveal sections
+      var sections = Array.from(document.querySelectorAll('.section'));
+      var io = new IntersectionObserver(function(entries, obs){
+        entries.forEach(function(entry){
+          if(entry.isIntersecting){ entry.target.classList.add('in-view'); obs.unobserve(entry.target); }
+        });
+      }, { threshold: 0.12 });
+      sections.forEach(function(s){ io.observe(s); });
+
+      // Animate stat numbers when #stats enters view
+      var statEls = Array.from(document.querySelectorAll('.stat-num'));
+      statEls.forEach(function(el){
+        var text = el.textContent.trim();
+        var m = text.match(/^([\d,\.]+)\s*(.*)$/);
+        var suffix = '';
+        var suffixRaw = '';
+        var num = 0;
+        if(m){
+          num = parseFloat(m[1].replace(/,/g,'')) || 0;
+          suffixRaw = (m[2]||'').trim();
+          // if raw suffix is K or M, scale the number
+          var abbr = (suffixRaw || '').match(/^([kKmM])$/);
+          if(abbr){ suffix = abbr[1].toUpperCase(); if(suffix==='K') num *= 1000; if(suffix==='M') num *= 1000000; }
+        } else { num = parseFloat(text.replace(/[^0-9\.]/g,'')) || 0; }
+        el.dataset.target = num;
+        el.dataset.suffix = suffix; // 'K'|'M' or ''
+        el.dataset.suffixRaw = suffixRaw; // preserve any trailing chars like '+' or '%'
+        el.textContent = '0';
+      });
+
+      var statsContainer = document.querySelector('#stats');
+      if(statsContainer && statEls.length){
+        var statObserver = new IntersectionObserver(function(entries, obs){
+          entries.forEach(function(entry){
+            if(entry.isIntersecting){
+              statEls.forEach(function(el){
+                var target = +el.dataset.target || 0;
+                var suffix = el.dataset.suffix || '';
+                var duration = 1400;
+                var start = performance.now();
+                function step(now){
+                  var progress = Math.min((now - start)/duration, 1);
+                  var val = Math.floor(target * easeOutCubic(progress));
+                  el.textContent = val.toLocaleString();
+                  if(progress < 1) requestAnimationFrame(step);
+                  else {
+                    var raw = el.dataset.suffixRaw || '';
+                    if(suffix==='M') el.textContent = (target/1000000) + 'M' + raw.replace(/^([kKmM])/, '');
+                    else if(suffix==='K') el.textContent = Math.round(target/1000) + 'K' + raw.replace(/^([kKmM])/, '');
+                    else el.textContent = target.toLocaleString() + raw;
+                  }
+                }
+                requestAnimationFrame(step);
+              });
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.2 });
+        statObserver.observe(statsContainer);
+      }
+    });
+  })();
+  </script>
 
   <script>
     (function () {
@@ -3605,16 +3693,18 @@
         <div class="coach-text">
           <div class="section-label">Meet Your Coach</div>
           <h2>Guided by a <span class="grad-text">Creative Director</span> Who's Done It</h2>
-          <p class="bio-body">My name is Femi Maven. I'm a motion designer, creative director, and the founder of
-            Mavenmint Academy.</p>
-          <p class="bio-body">With over 4 years of experience, I've worked on motion design projects for brands and
-            companies across the SaaS, AI, and Fintech industries &mdash; creating UI animations, explainer videos, and
-            promotional content that help bring ideas to life visually.</p>
-          <p class="bio-body">I've had the privilege of mentoring thousands of students in motion design, from complete
-            beginners to creatives who are now working on real projects and making great progress in the industry.</p>
-          <p class="bio-body">My goal is simple: to help you go from zero experience to confidently creating motion
-            designs using just your smartphone &mdash; while building a skill that creates earning opportunities for
-            yourself.</p>
+          <p class="bio-body">My name is Femi Maven, a Motion Designer, Creative Director, and the Founder of Maven Mint Academy.</p>
+
+
+          <p class="bio-body">Over four years ago, I started my motion design journey with nothing but a smartphone and a determination to learn. Finding quality resources was difficult, so I spent years teaching myself through research, practice, and experimentation until I mastered the skill.</p>
+          <p class="bio-body">To help others avoid the same struggle, I founded Maven Mint Academy in 2023. Since then, we have trained 500+ students across 10+ countries, helping them develop industry-standard motion design skills and work with brands in industries such as FinTech, AI, Crypto, Web3, and E-commerce.
+
+</p>
+          <p class="bio-body">My work and contributions to creative education have earned me recognition, including the Africa Media Excellence Award under the Gen Z Awards.
+
+Today, my mission is to help more people learn motion design, build valuable skills, and create opportunities for themselves using the smartphone they already own.</p>
+<p class="bio-body">
+I am also a public speaker and have had the privilege of inspiring many people through both virtual and in-person speaking engagements. Driven by a mission to positively impact millions, I am dedicated to making a difference and being a blessing to my generation.</p>
           <div class="coach-tags"><span class="coach-tag">Motion Design</span><span class="coach-tag">Creative
               Direction</span><span class="coach-tag">SaaS &dash; Fintech</span><span
               class="coach-tag">Animator</span><span class="coach-tag">Founder</span><span
@@ -3874,13 +3964,13 @@
               <a href="https://www.instagram.com/mavenmint/" target="_blank" rel="noopener noreferrer">@mavenmint</a>
             </div>
           </div>
-          <button class="whatsapp-btn" onclick="window.open('https://wa.me/2349124589279','_blank')">
+          <button class="whatsapp-btn" onclick="window.open('https://wa.link/o7u784','_blank')">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
               <path
                 d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
             </svg>
             Chat on WhatsApp
-            <button class="whatsapp-btn" onclick="window.open('https://calendly.com/mavenmint','_blank')">
+            <button class="whatsapp-btn" onclick="window.open('https://forms.gle/43remhEw1iwT9oAg6','_blank')">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
                 <path
                   d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11zm-5-9h-4v4h4v-4z" />
