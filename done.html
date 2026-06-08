@@ -1381,150 +1381,60 @@
       font-weight: 700;
     }
 
-    /* ── Student Work Slide View ── */
-    .sw-slideshow {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 24px;
-    }
-
-    .sw-stage {
-      position: relative;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    /* Arrow buttons */
-    .sw-arrow {
-      flex-shrink: 0;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: rgba(10, 34, 54, 0.9);
-      border: 1px solid var(--border2);
-      color: var(--cyan);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      transition: background .2s, transform .2s, box-shadow .2s;
-      z-index: 10;
-      backdrop-filter: blur(8px);
-    }
-
-    .sw-arrow:hover:not(:disabled) {
-      background: var(--cyan-glow);
-      transform: scale(1.1);
-      box-shadow: 0 0 20px rgba(0,229,200,.25);
-    }
-
-    .sw-arrow:disabled {
-      opacity: 0.3;
-      cursor: default;
-    }
-
-    .sw-arrow svg {
-      width: 22px;
-      height: 22px;
-    }
-
-    /* Viewport that clips the track */
-    .sw-viewport {
-      flex: 1;
-      overflow: hidden;
-      border-radius: var(--r-lg);
-    }
-
-    /* Sliding track */
-    .sw-track {
-      display: flex;
+    .student-work-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
       gap: 16px;
-      transition: transform .5s cubic-bezier(.4,0,.2,1);
-      will-change: transform;
     }
 
-    /* Each slide card */
-    .sw-slide {
-      flex: 0 0 calc(33.333% - 11px);
-      min-width: 0;
+    .sw-card {
+      aspect-ratio: 9/16;
       border-radius: var(--r);
       overflow: hidden;
       background: linear-gradient(160deg, var(--dark3), var(--dark2));
       border: 1px solid var(--border);
       position: relative;
-      transition: border-color .3s, box-shadow .3s, transform .3s;
-    }
-
-    .sw-slide.active {
-      border-color: var(--border2);
-      box-shadow: 0 0 40px rgba(0,229,200,.12);
-    }
-
-    .sw-slide .video-thumb {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 9/16;
-    }
-
-    /* Dots */
-    .sw-dots {
-      display: flex;
-      gap: 8px;
-      align-items: center;
-    }
-
-    .sw-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: var(--border2);
-      border: none;
+      transition: transform .3s;
       cursor: pointer;
-      transition: background .25s, transform .25s, width .25s;
-      padding: 0;
     }
 
-    .sw-dot.active {
-      background: var(--cyan);
-      transform: scale(1.3);
-      width: 22px;
-      border-radius: 4px;
+    .sw-card:hover {
+      transform: scale(1.03);
     }
 
-    /* Counter badge */
-    .sw-counter {
-      font-size: .72rem;
+    .sw-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(4, 14, 24, .9) 0%, transparent 60%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 16px;
+    }
+
+    .sw-label {
+      font-size: .75rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .sw-sub {
+      font-size: .65rem;
       color: var(--muted);
-      font-weight: 500;
-      letter-spacing: .05em;
     }
 
-    .sw-counter span {
-      color: var(--cyan);
-      font-weight: 700;
+    .sw-bg {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
     }
 
-    /* Swipe hint on mobile */
-    .sw-hint {
-      display: none;
-      font-size: .7rem;
-      color: var(--muted2);
-      text-align: center;
+    .sw-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(20px);
+      animation: float 5s ease-in-out infinite;
     }
-
-    /* Legacy .sw-card / sw-* kept for safety */
-    .sw-card { aspect-ratio: 9/16; border-radius: var(--r); overflow: hidden; background: linear-gradient(160deg, var(--dark3), var(--dark2)); border: 1px solid var(--border); position: relative; transition: transform .3s; cursor: pointer; }
-    .sw-card:hover { transform: scale(1.03); }
-    .sw-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(4,14,24,.9) 0%, transparent 60%); display: flex; flex-direction: column; justify-content: flex-end; padding: 16px; }
-    .sw-label { font-size: .75rem; font-weight: 600; color: var(--text); }
-    .sw-sub { font-size: .65rem; color: var(--muted); }
-    .sw-bg { position: absolute; inset: 0; overflow: hidden; }
-    .sw-circle { position: absolute; border-radius: 50%; filter: blur(20px); animation: float 5s ease-in-out infinite; }
 
     .testimonials-slider-container {
       position: relative;
@@ -2258,8 +2168,8 @@
         gap: 32px;
       }
 
-      .sw-slide {
-        flex: 0 0 calc(50% - 8px);
+      .student-work-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .coach-wrap {
@@ -2356,13 +2266,8 @@
         grid-template-columns: 1fr;
       }
 
-      .sw-arrow {
-        width: 42px;
-        height: 42px;
-      }
-
-      .sw-slide {
-        flex: 0 0 calc(50% - 8px);
+      .student-work-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
 
       .testimonials-grid {
@@ -2455,22 +2360,8 @@
         grid-template-columns: 1fr;
       }
 
-      .sw-arrow {
-        width: 36px;
-        height: 36px;
-      }
-
-      .sw-arrow svg {
-        width: 17px;
-        height: 17px;
-      }
-
-      .sw-slide {
-        flex: 0 0 100%;
-      }
-
-      .sw-hint {
-        display: block;
+      .student-work-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
       .footer-grid {
@@ -3836,247 +3727,135 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
         <h2>From Beginner Projects to <span class="grad-text">Professional Motion Designs</span></h2>
         <p>See projects and animations created by students who started exactly where you are today.</p>
       </div>
-      <style>
-        /* Click-to-load YouTube placeholders inside student work */
-        #student-work .video-thumb {
-          position: relative;
-          width: 100%;
-          aspect-ratio: 9/16;
-        }
+      <div class="student-work-grid">
+        <style>
+          /* Click-to-load YouTube placeholders inside student work */
+          #student-work .video-thumb {
+            position: relative;
+          }
 
-        .yt-placeholder {
-          position: absolute;
-          inset: 0;
-          background-size: cover;
-          background-position: center;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-        }
+          .yt-placeholder {
+            position: absolute;
+            inset: 0;
+            background-size: cover;
+            background-position: center;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
 
-        .yt-playbtn {
-          width: 64px;
-          height: 64px;
-          border-radius: 50%;
-          background: rgba(0, 0, 0, .6);
-          border: 2px solid rgba(255,255,255,.25);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          cursor: pointer;
-          transition: background .2s, transform .2s;
-        }
+          .yt-playbtn {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, .6);
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+          }
 
-        .yt-playbtn:hover {
-          background: rgba(1,255,169,.25);
-          transform: scale(1.12);
-        }
+          .yt-playbtn svg {
+            width: 28px;
+            height: 28px;
+          }
+        </style>
 
-        .yt-playbtn svg {
-          width: 28px;
-          height: 28px;
-        }
-      </style>
-
-      <!-- Slide View -->
-      <div class="sw-slideshow" id="swSlideshow">
-        <div class="sw-stage">
-          <!-- Prev -->
-          <button class="sw-arrow" id="swPrev" aria-label="Previous">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"/>
-            </svg>
-          </button>
-
-          <!-- Viewport -->
-          <div class="sw-viewport">
-            <div class="sw-track" id="swTrack">
-
-              <div class="sw-slide active">
-                <div class="video-thumb">
-                  <div class="yt-placeholder" data-src="https://www.youtube.com/embed/qWC9DYZ7GO0?si=YgYXs0i8GpYw-Ijg" data-id="qWC9DYZ7GO0" style="background-image:url('https://img.youtube.com/vi/qWC9DYZ7GO0/hqdefault.jpg')">
-                    <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21"/></svg></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sw-slide">
-                <div class="video-thumb">
-                  <div class="yt-placeholder" data-src="https://www.youtube.com/embed/s9GQwipNVnA?si=Arb72LQi8vyKksPU" data-id="s9GQwipNVnA" style="background-image:url('https://img.youtube.com/vi/s9GQwipNVnA/hqdefault.jpg')">
-                    <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21"/></svg></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sw-slide">
-                <div class="video-thumb">
-                  <div class="yt-placeholder" data-src="https://www.youtube.com/embed/mesMps2b8ZI?si=oc9WPq3STe9wusd3" data-id="mesMps2b8ZI" style="background-image:url('https://img.youtube.com/vi/mesMps2b8ZI/hqdefault.jpg')">
-                    <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21"/></svg></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sw-slide">
-                <div class="video-thumb">
-                  <div class="yt-placeholder" data-src="https://www.youtube.com/embed/0dEj9-Kw8oE?si=sIy_L8e0a7SKgTP-" data-id="0dEj9-Kw8oE" style="background-image:url('https://img.youtube.com/vi/0dEj9-Kw8oE/hqdefault.jpg')">
-                    <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21"/></svg></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sw-slide">
-                <div class="video-thumb">
-                  <div class="yt-placeholder" data-src="https://www.youtube.com/embed/UMteAgd0imY?si=CpBYZ10iF_Z0lbUj" data-id="UMteAgd0imY" style="background-image:url('https://img.youtube.com/vi/UMteAgd0imY/hqdefault.jpg')">
-                    <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21"/></svg></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sw-slide">
-                <div class="video-thumb">
-                  <div class="yt-placeholder" data-src="https://www.youtube.com/embed/sWtbd-VIT6M?si=V6GF74r_qfNkQTQw" data-id="sWtbd-VIT6M" style="background-image:url('https://img.youtube.com/vi/sWtbd-VIT6M/hqdefault.jpg')">
-                    <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21"/></svg></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sw-slide">
-                <div class="video-thumb">
-                  <div class="yt-placeholder" data-src="https://www.youtube.com/embed/dRaOQdfyr3Q" data-id="dRaOQdfyr3Q" style="background-image:url('https://img.youtube.com/vi/dRaOQdfyr3Q/hqdefault.jpg')">
-                    <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21"/></svg></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sw-slide">
-                <div class="video-thumb">
-                  <div class="yt-placeholder" data-src="https://www.youtube.com/embed/8-ItUEob-4Y" data-id="8-ItUEob-4Y" style="background-image:url('https://img.youtube.com/vi/8-ItUEob-4Y/hqdefault.jpg')">
-                    <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21"/></svg></button>
-                  </div>
-                </div>
-              </div>
-
-              <div class="sw-slide">
-                <div class="video-thumb">
-                  <div class="yt-placeholder" data-src="https://www.youtube.com/embed/G6jY6wIDu7o" data-id="G6jY6wIDu7o" style="background-image:url('https://img.youtube.com/vi/G6jY6wIDu7o/hqdefault.jpg')">
-                    <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21"/></svg></button>
-                  </div>
-                </div>
-              </div>
-
-            </div><!-- /sw-track -->
-          </div><!-- /sw-viewport -->
-
-          <!-- Next -->
-          <button class="sw-arrow" id="swNext" aria-label="Next">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"/>
-            </svg>
-          </button>
-        </div><!-- /sw-stage -->
-
-        <!-- Dots + counter -->
-        <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;justify-content:center;">
-          <div class="sw-dots" id="swDots"></div>
-          <div class="sw-counter"><span id="swCurrent">1</span> / <span id="swTotal">9</span></div>
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/qWC9DYZ7GO0?si=YgYXs0i8GpYw-Ijg"
+            data-id="qWC9DYZ7GO0" style="background-image:url('https://img.youtube.com/vi/qWC9DYZ7GO0/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
+          </div>
         </div>
-        <p class="sw-hint">Swipe left or right to browse</p>
-      </div><!-- /sw-slideshow -->
+
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/s9GQwipNVnA?si=Arb72LQi8vyKksPU"
+            data-id="s9GQwipNVnA" style="background-image:url('https://img.youtube.com/vi/s9GQwipNVnA/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
+          </div>
+        </div>
+
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/mesMps2b8ZI?si=oc9WPq3STe9wusd3"
+            data-id="mesMps2b8ZI" style="background-image:url('https://img.youtube.com/vi/mesMps2b8ZI/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
+          </div>
+        </div>
+
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/0dEj9-Kw8oE?si=sIy_L8e0a7SKgTP-"
+            data-id="0dEj9-Kw8oE" style="background-image:url('https://img.youtube.com/vi/0dEj9-Kw8oE/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
+          </div>
+        </div>
+
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/UMteAgd0imY?si=CpBYZ10iF_Z0lbUj"
+            data-id="UMteAgd0imY" style="background-image:url('https://img.youtube.com/vi/UMteAgd0imY/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
+          </div>
+        </div>
+
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/sWtbd-VIT6M?si=V6GF74r_qfNkQTQw"
+            data-id="sWtbd-VIT6M" style="background-image:url('https://img.youtube.com/vi/sWtbd-VIT6M/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
+          </div>
+        </div>
+
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/dRaOQdfyr3Q"
+            data-id="dRaOQdfyr3Q" style="background-image:url('https://img.youtube.com/vi/dRaOQdfyr3Q/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
+          </div>
+        </div>
+
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/8-ItUEob-4Y"
+            data-id="8-ItUEob-4Y" style="background-image:url('https://img.youtube.com/vi/8-ItUEob-4Y/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
+          </div>
+        </div>
+
+        <div class="video-thumb">
+          <div class="yt-placeholder" data-src="https://www.youtube.com/embed/G6jY6wIDu7o"
+            data-id="G6jY6wIDu7o" style="background-image:url('https://img.youtube.com/vi/G6jY6wIDu7o/hqdefault.jpg')">
+            <button class="yt-playbtn" aria-label="Play video"><svg viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21" />
+              </svg></button>
+          </div>
+        </div>
+      </div>
 
       <script>
-        /* ── Student Work Slideshow ── */
         (function () {
-          var track = document.getElementById('swTrack');
-          var slides = Array.from(track.querySelectorAll('.sw-slide'));
-          var prevBtn = document.getElementById('swPrev');
-          var nextBtn = document.getElementById('swNext');
-          var dotsEl = document.getElementById('swDots');
-          var currentEl = document.getElementById('swCurrent');
-          var totalEl = document.getElementById('swTotal');
-          var index = 0;
-
-          totalEl.textContent = slides.length;
-
-          function getVisible() {
-            var w = window.innerWidth;
-            if (w < 600) return 1;
-            if (w < 900) return 2;
-            return 3;
-          }
-
-          function maxIndex() {
-            return Math.max(0, slides.length - getVisible());
-          }
-
-          function buildDots() {
-            dotsEl.innerHTML = '';
-            var max = maxIndex();
-            for (var i = 0; i <= max; i++) {
-              var d = document.createElement('button');
-              d.className = 'sw-dot' + (i === index ? ' active' : '');
-              d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
-              d.dataset.i = i;
-              d.addEventListener('click', function () { go(+this.dataset.i); });
-              dotsEl.appendChild(d);
-            }
-          }
-
-          function updateSlideClasses() {
-            slides.forEach(function (s, i) {
-              s.classList.toggle('active', i >= index && i < index + getVisible());
-            });
-          }
-
-          function go(n) {
-            index = Math.max(0, Math.min(n, maxIndex()));
-            var slideW = slides[0].getBoundingClientRect().width;
-            var gap = 16;
-            track.style.transform = 'translateX(-' + (index * (slideW + gap)) + 'px)';
-            prevBtn.disabled = index === 0;
-            nextBtn.disabled = index >= maxIndex();
-            currentEl.textContent = index + 1;
-            dotsEl.querySelectorAll('.sw-dot').forEach(function (d, i) {
-              d.classList.toggle('active', i === index);
-            });
-            updateSlideClasses();
-          }
-
-          prevBtn.addEventListener('click', function () { go(index - 1); });
-          nextBtn.addEventListener('click', function () { go(index + 1); });
-
-          document.addEventListener('keydown', function (e) {
-            if (e.key === 'ArrowLeft') go(index - 1);
-            if (e.key === 'ArrowRight') go(index + 1);
-          });
-
-          /* Touch / swipe */
-          var touchStartX = 0;
-          track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
-          track.addEventListener('touchend', function (e) {
-            var dx = touchStartX - e.changedTouches[0].clientX;
-            if (Math.abs(dx) > 40) go(dx > 0 ? index + 1 : index - 1);
-          });
-
-          var resizeTO;
-          window.addEventListener('resize', function () {
-            clearTimeout(resizeTO);
-            resizeTO = setTimeout(function () {
-              index = Math.min(index, maxIndex());
-              buildDots();
-              go(index);
-            }, 150);
-          });
-
-          /* YouTube click-to-load */
           function createIframe(src) {
             var iframe = document.createElement('iframe');
             var sep = src.indexOf('?') === -1 ? '?' : '&';
-            iframe.src = src + sep + 'enablejsapi=1&autoplay=1';
+            var srcWith = src + sep + 'enablejsapi=1&autoplay=1';
+            iframe.setAttribute('src', srcWith);
             iframe.setAttribute('frameborder', '0');
             iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
             iframe.setAttribute('allowfullscreen', '');
-            iframe.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;border:0;';
+            iframe.style.position = 'absolute'; iframe.style.inset = '0'; iframe.style.width = '100%'; iframe.style.height = '100%'; iframe.style.border = '0';
             return iframe;
           }
 
@@ -4087,15 +3866,11 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
               var iframe = createIframe(src);
               parent.appendChild(iframe);
               p.remove();
+              // register dynamic iframe with YouTube init helper if available
               if (window.initYTIframe) window.initYTIframe(iframe);
+              // If YT API already available but init helper not set, try to initialize directly
               if (window.YT && !window.initYTIframe && typeof window.onYouTubeIframeAPIReady === 'function') { try { window.onYouTubeIframeAPIReady(); } catch (e) { } }
             });
-          });
-
-          /* Init */
-          requestAnimationFrame(function () {
-            buildDots();
-            go(0);
           });
         })();
       </script>
