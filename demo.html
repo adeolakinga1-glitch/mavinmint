@@ -3017,170 +3017,63 @@
 These are real motion design projects created for fintech, AI, tech, crypto, e-commerce, Web3, EdTech, and SaaS brands using just a smartphone.</p>
       </div>
       <style>
-        /* ══ SAMPLE PROJECTS – RESPONSIVE CAROUSEL ══ */
-
-        /* Wrapper */
-        #samples .sp-carousel-wrap {
-          position: relative;
-          user-select: none;
-          /* side fade masks */
-        }
-        #samples .sp-carousel-wrap::before,
-        #samples .sp-carousel-wrap::after {
-          content: '';
-          position: absolute;
-          top: 0; bottom: 0;
-          width: 72px;
-          z-index: 10;
-          pointer-events: none;
-        }
-        #samples .sp-carousel-wrap::before { left: 0;  background: linear-gradient(to right, var(--dark), transparent); }
-        #samples .sp-carousel-wrap::after  { right: 0; background: linear-gradient(to left,  var(--dark), transparent); }
-
-        /* Stage clips overflow */
-        #samples .sp-stage {
-          overflow: hidden;
-          padding: 10px 0 20px;
+        /* Ensure sample videos display in landscape (16:9) and are responsive */
+        #samples .video-grid {
+          display: grid;
+          gap: 20px;
+          grid-template-columns: repeat(auto-fit, minmax(280px, 420px));
+          justify-content: center;
+          width: 100%;
         }
 
-        /* Track holds all slides in a row */
-        #samples .sp-track {
-          display: flex;
-          gap: 16px;
-          transition: transform 0.48s cubic-bezier(0.4, 0, 0.2, 1);
-          will-change: transform;
-          align-items: stretch;
-        }
-
-        /* Each slide */
-        #samples .sp-slide {
-          flex: 0 0 400px;          /* desktop default */
-          aspect-ratio: 16 / 9;
+        #samples .video-thumb {
+          aspect-ratio: 16/9;
+          display: block;
           position: relative;
           overflow: hidden;
-          border-radius: 16px;
-          border: 1px solid var(--border);
-          background: var(--dark3);
-          transition: box-shadow 0.4s, border-color 0.4s, opacity 0.4s, transform 0.4s;
+          background: var(--muted2);
+          min-width: 280px;
+          max-width: 420px;
         }
-        #samples .sp-slide.sp-active {
-          border-color: var(--border2);
-          box-shadow: 0 0 0 1.5px var(--cyan), 0 16px 48px rgba(0,229,200,.15);
-          transform: translateY(-4px);
-        }
-        #samples .sp-slide:not(.sp-active) { opacity: 0.58; }
 
-        /* Wistia fills the slide */
-        #samples .sp-slide wistia-player {
-          position: absolute !important;
-          inset: 0 !important;
-          width: 100% !important;
-          height: 100% !important;
-          display: block !important;
-        }
-        #samples .sp-slide wistia-player:not(:defined) { filter: none !important; }
-
-        /* Inactive overlay (click to advance) */
-        #samples .sp-slide-overlay {
+        #samples .video-thumb .vt-bg {
           position: absolute;
           inset: 0;
-          z-index: 12;
-          background: rgba(4,14,24,.3);
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          transition: background 0.25s;
-          cursor: pointer;
-        }
-        #samples .sp-slide.sp-active .sp-slide-overlay {
-          background: transparent;
+          z-index: 0;
           pointer-events: none;
         }
-        #samples .sp-slide-overlay svg {
-          opacity: 0.55;
-          transition: opacity 0.2s, transform 0.2s;
-        }
-        #samples .sp-slide:not(.sp-active):hover .sp-slide-overlay svg {
-          opacity: 0.95;
-          transform: scale(1.12);
-        }
-        #samples .sp-slide.sp-active .sp-slide-overlay svg { display: none; }
 
-        /* Counter */
-        #samples .sp-counter {
-          text-align: center;
-          font-size: 0.7rem;
-          color: var(--muted2);
-          letter-spacing: 0.08em;
-          margin-bottom: 10px;
-        }
-        #samples .sp-counter strong { color: var(--cyan); }
-
-        /* Controls */
-        #samples .sp-controls {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          gap: 14px;
-          margin-top: 20px;
-        }
-        #samples .sp-btn {
-          width: 44px; height: 44px;
-          border-radius: 50%;
-          border: 1px solid var(--border2);
-          background: rgba(0,229,200,.06);
-          color: var(--cyan);
-          font-size: 20px;
-          display: flex; align-items: center; justify-content: center;
-          cursor: pointer;
-          transition: background 0.2s, box-shadow 0.2s, transform 0.2s;
-          flex-shrink: 0;
-        }
-        #samples .sp-btn:hover:not(:disabled) {
-          background: rgba(0,229,200,.16);
-          box-shadow: 0 0 18px rgba(0,229,200,.22);
-          transform: scale(1.08);
-        }
-        #samples .sp-btn:disabled { opacity: 0.28; cursor: not-allowed; transform: none; }
-
-        /* Dots */
-        #samples .sp-dots {
-          display: flex; gap: 5px; align-items: center;
-          flex-wrap: wrap; justify-content: center; max-width: 220px;
-        }
-        #samples .sp-dot {
-          width: 7px; height: 7px;
-          border-radius: 50%;
-          background: var(--border2);
-          cursor: pointer;
-          transition: background 0.3s, width 0.3s, border-radius 0.3s;
-        }
-        #samples .sp-dot.active {
-          width: 24px; border-radius: 4px; background: var(--cyan);
+        #samples .video-thumb wistia-player {
+          position: absolute;
+          inset: 0;
+          width: 100%;
+          height: 100%;
+          z-index: 1;
+          display: block;
+          visibility: visible !important;
+          opacity: 1 !important;
+          filter: none !important;
         }
 
-        /* ── TABLET (≤1024px) ── */
-        @media (max-width: 1024px) {
-          #samples .sp-slide { flex: 0 0 340px; }
-          #samples .sp-carousel-wrap::before,
-          #samples .sp-carousel-wrap::after { width: 48px; }
+        /* Remove any Wistia swatch/placeholder inside samples */
+        #samples wistia-player[media-id]:not(:defined) {
+          filter: none !important;
         }
 
-        /* ── MOBILE LANDSCAPE / SMALL TABLET (≤768px) ── */
-        @media (max-width: 768px) {
-          #samples .sp-slide { flex: 0 0 88vw; }
-          #samples .sp-slide.sp-active { transform: translateY(-2px); }
-          #samples .sp-carousel-wrap::before,
-          #samples .sp-carousel-wrap::after { width: 28px; }
-          #samples .sp-btn { width: 40px; height: 40px; font-size: 18px; }
+        /* Hide overlays on sample videos (play button, labels) */
+        #samples .video-thumb .vt-overlay {
+          display: none !important;
         }
 
-        /* ── MOBILE PORTRAIT (≤480px) ── */
-        @media (max-width: 480px) {
-          #samples .sp-slide { flex: 0 0 92vw; }
-          #samples .sp-carousel-wrap::before,
-          #samples .sp-carousel-wrap::after { width: 18px; }
-          #samples .sp-controls { gap: 10px; }
+        #samples .video-thumb .play-btn {
+          pointer-events: auto;
+        }
+
+        @media (max-width:700px) {
+          #samples .video-thumb {
+            min-width: 100%;
+            max-width: 100%;
+          }
         }
   
     /* ═══ COUNTRIES SECTION ═══ */
@@ -3268,268 +3161,169 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
       .csb-item:nth-last-child(-n+2) { border-bottom: none; }
     }
     </style>
-      <div class="sp-counter">Project <strong id="sp-cur">1</strong> of <strong id="sp-tot">15</strong></div>
-
-      <div class="sp-carousel-wrap">
-        <div class="sp-stage">
-          <div class="sp-track" id="sp-track">
-        <div class="sp-slide sp-active">
+      <div class="video-grid">
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
           <script src="https://fast.wistia.com/embed/p0anrm2uqo.js" async type="module"></script>
-          <style>wistia-player[media-id='p0anrm2uqo']:not(:defined){padding-top:56.25%;}</style>
-          <wistia-player media-id="p0anrm2uqo" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
+          <style>
+            wistia-player[media-id='p0anrm2uqo']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/p0anrm2uqo/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 57.5%;
+            }
+          </style>
+          <wistia-player media-id="p0anrm2uqo" aspect="1.7391304347826086"></wistia-player>
         </div>
-        <div class="sp-slide">
+
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
           <script src="https://fast.wistia.com/embed/mht0a4dite.js" async type="module"></script>
-          <style>wistia-player[media-id='mht0a4dite']:not(:defined){padding-top:56.25%;}</style>
+          <style>
+            wistia-player[media-id='mht0a4dite']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/mht0a4dite/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 56.25%;
+            }
+          </style>
           <wistia-player media-id="mht0a4dite" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
         </div>
-        <div class="sp-slide">
+
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
           <script src="https://fast.wistia.com/embed/gwhevckas2.js" async type="module"></script>
-          <style>wistia-player[media-id='gwhevckas2']:not(:defined){padding-top:56.25%;}</style>
+          <style>
+            wistia-player[media-id='gwhevckas2']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/gwhevckas2/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 56.25%;
+            }
+          </style>
           <wistia-player media-id="gwhevckas2" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
         </div>
-        <div class="sp-slide">
+
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
           <script src="https://fast.wistia.com/embed/cbhtt6f9kd.js" async type="module"></script>
-          <style>wistia-player[media-id='cbhtt6f9kd']:not(:defined){padding-top:56.25%;}</style>
-          <wistia-player media-id="cbhtt6f9kd" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
+          <style>
+            wistia-player[media-id='cbhtt6f9kd']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/cbhtt6f9kd/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 56.67%;
+            }
+          </style>
+          <wistia-player media-id="cbhtt6f9kd" aspect="1.7647058823529411"></wistia-player>
         </div>
-        <div class="sp-slide">
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
           <script src="https://fast.wistia.com/embed/8wcehbrv4x.js" async type="module"></script>
-          <style>wistia-player[media-id='8wcehbrv4x']:not(:defined){padding-top:56.25%;}</style>
+          <style>
+            wistia-player[media-id='8wcehbrv4x']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/8wcehbrv4x/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 56.25%;
+            }
+          </style>
           <wistia-player media-id="8wcehbrv4x" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
         </div>
-        <div class="sp-slide">
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
           <script src="https://fast.wistia.com/embed/7h4l9pszkr.js" async type="module"></script>
-          <style>wistia-player[media-id='7h4l9pszkr']:not(:defined){padding-top:56.25%;}</style>
+          <style>
+            wistia-player[media-id='7h4l9pszkr']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/7h4l9pszkr/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 56.25%;
+            }
+          </style>
           <wistia-player media-id="7h4l9pszkr" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
         </div>
-        <div class="sp-slide">
-          <script src="https://fast.wistia.com/embed/drzy23kp48.js" async type="module"></script>
-          <style>wistia-player[media-id='drzy23kp48']:not(:defined){padding-top:56.25%;}</style>
-          <wistia-player media-id="drzy23kp48" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/drzy23kp48.js" async type="module"></script><style>wistia-player[media-id='drzy23kp48']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/drzy23kp48/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style> <wistia-player media-id="drzy23kp48" aspect="1.7777777777777777"></wistia-player>
         </div>
-        <div class="sp-slide">
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
           <script src="https://fast.wistia.com/embed/t27i42d6z9.js" async type="module"></script>
-          <style>wistia-player[media-id='t27i42d6z9']:not(:defined){padding-top:56.25%;}</style>
+          <style>
+            wistia-player[media-id='t27i42d6z9']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/t27i42d6z9/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 56.25%;
+            }
+          </style>
           <wistia-player media-id="t27i42d6z9" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
         </div>
-        <div class="sp-slide">
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
           <script src="https://fast.wistia.com/embed/rjegb2q0zo.js" async type="module"></script>
-          <style>wistia-player[media-id='rjegb2q0zo']:not(:defined){padding-top:56.25%;}</style>
+          <style>
+            wistia-player[media-id='rjegb2q0zo']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/rjegb2q0zo/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 56.25%;
+            }
+          </style>
           <wistia-player media-id="rjegb2q0zo" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
         </div>
-        <div class="sp-slide">
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
           <script src="https://fast.wistia.com/embed/m63w0a0nj4.js" async type="module"></script>
-          <style>wistia-player[media-id='m63w0a0nj4']:not(:defined){padding-top:56.25%;}</style>
+          <style>
+            wistia-player[media-id='m63w0a0nj4']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/m63w0a0nj4/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 56.25%;
+            }
+          </style>
           <wistia-player media-id="m63w0a0nj4" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
         </div>
-        <div class="sp-slide">
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
           <script src="https://fast.wistia.com/embed/ddruyy4jsn.js" async type="module"></script>
-          <style>wistia-player[media-id='ddruyy4jsn']:not(:defined){padding-top:56.25%;}</style>
+          <style>
+            wistia-player[media-id='ddruyy4jsn']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/ddruyy4jsn/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 56.25%;
+            }
+          </style>
           <wistia-player media-id="ddruyy4jsn" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
         </div>
-        <div class="sp-slide">
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script>
           <script src="https://fast.wistia.com/embed/mca6vky5ed.js" async type="module"></script>
-          <style>wistia-player[media-id='mca6vky5ed']:not(:defined){padding-top:56.25%;}</style>
+          <style>
+            wistia-player[media-id='mca6vky5ed']:not(:defined) {
+              background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/mca6vky5ed/swatch');
+              display: block;
+              filter: blur(5px);
+              padding-top: 56.25%;
+            }
+          </style>
           <wistia-player media-id="mca6vky5ed" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
         </div>
-        <div class="sp-slide">
-          <script src="https://fast.wistia.com/embed/l4i8zp2mli.js" async type="module"></script>
-          <style>wistia-player[media-id='l4i8zp2mli']:not(:defined){padding-top:56.25%;}</style>
-          <wistia-player media-id="l4i8zp2mli" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/l4i8zp2mli.js" async type="module"></script><style>wistia-player[media-id='l4i8zp2mli']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/l4i8zp2mli/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style> <wistia-player media-id="l4i8zp2mli" aspect="1.7777777777777777"></wistia-player>
         </div>
-        <div class="sp-slide">
-          <script src="https://fast.wistia.com/embed/rpt5py4215.js" async type="module"></script>
-          <style>wistia-player[media-id='rpt5py4215']:not(:defined){padding-top:56.25%;}</style>
-          <wistia-player media-id="rpt5py4215" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/rpt5py4215.js" async type="module"></script><style>wistia-player[media-id='rpt5py4215']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/rpt5py4215/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style> <wistia-player media-id="rpt5py4215" aspect="1.7777777777777777"></wistia-player>
         </div>
-        <div class="sp-slide">
-          <script src="https://fast.wistia.com/embed/5kptb10419.js" async type="module"></script>
-          <style>wistia-player[media-id='5kptb10419']:not(:defined){padding-top:56.25%;}</style>
-          <wistia-player media-id="5kptb10419" aspect="1.7777777777777777"></wistia-player>
-          <div class="sp-slide-overlay">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="21" fill="rgba(0,229,200,.18)" stroke="rgba(0,229,200,.5)" stroke-width="1.5"/>
-              <polygon points="17,13 33,22 17,31" fill="white"/>
-            </svg>
-          </div>
-        </div>
-          </div>
+
+        <div class="video-thumb">
+          <script src="https://fast.wistia.com/player.js" async></script><script src="https://fast.wistia.com/embed/5kptb10419.js" async type="module"></script><style>wistia-player[media-id='5kptb10419']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/5kptb10419/swatch'); display: block; filter: blur(5px); padding-top:56.25%; }</style> <wistia-player media-id="5kptb10419" aspect="1.7777777777777777"></wistia-player>
         </div>
       </div>
-
-      <div class="sp-controls">
-        <button class="sp-btn" id="sp-prev" aria-label="Previous project">&#8249;</button>
-        <div class="sp-dots" id="sp-dots"></div>
-        <button class="sp-btn" id="sp-next" aria-label="Next project">&#8250;</button>
-      </div>
-
-      <script>
-      (function(){
-        var track  = document.getElementById('sp-track');
-        var slides = Array.from(track.querySelectorAll('.sp-slide'));
-        var prev   = document.getElementById('sp-prev');
-        var next   = document.getElementById('sp-next');
-        var dotsW  = document.getElementById('sp-dots');
-        var curEl  = document.getElementById('sp-cur');
-        var total  = slides.length, cur = 0;
-
-        /* Build dots */
-        slides.forEach(function(_, i){
-          var d = document.createElement('div');
-          d.className = 'sp-dot' + (i===0?' active':'');
-          d.addEventListener('click', function(){ goTo(i); });
-          dotsW.appendChild(d);
-        });
-
-        function slideWidth() {
-          return slides[0] ? slides[0].getBoundingClientRect().width : 400;
-        }
-
-        function goTo(idx){
-          idx = Math.max(0, Math.min(idx, total-1));
-          cur = idx;
-
-          /* Active/inactive classes */
-          slides.forEach(function(s,i){ s.classList.toggle('sp-active', i===idx); });
-
-          /* Center the active slide in the viewport */
-          var stage  = track.parentElement;
-          var stageW = stage.getBoundingClientRect().width;
-          var sw     = slideWidth();
-          var gap    = 16;
-          var center = stageW/2 - sw/2;
-          var before = 0;
-          for(var i=0; i<idx; i++) before += sw + gap;
-          var offset = Math.max(0, before - center);
-          track.style.transform = 'translateX(-' + offset + 'px)';
-
-          /* Dots */
-          Array.from(dotsW.children).forEach(function(d,i){ d.classList.toggle('active', i===idx); });
-          curEl.textContent = idx+1;
-          prev.disabled = idx===0;
-          next.disabled = idx===total-1;
-
-          /* Pause other Wistia players */
-          slides.forEach(function(s,i){
-            if(i===idx) return;
-            var wp = s.querySelector('wistia-player');
-            if(wp && typeof wp.pause==='function') try{ wp.pause(); }catch(e){}
-          });
-        }
-
-        /* Overlay click → advance to that slide */
-        slides.forEach(function(s,i){
-          var ov = s.querySelector('.sp-slide-overlay');
-          if(ov) ov.addEventListener('click', function(){ goTo(i); });
-        });
-
-        prev.addEventListener('click', function(){ goTo(cur-1); });
-        next.addEventListener('click', function(){ goTo(cur+1); });
-
-        /* Touch / swipe */
-        var tx = 0;
-        track.addEventListener('touchstart', function(e){ tx=e.touches[0].clientX; }, {passive:true});
-        track.addEventListener('touchend',   function(e){
-          var dx = tx - e.changedTouches[0].clientX;
-          if(Math.abs(dx)>40) dx>0 ? goTo(cur+1) : goTo(cur-1);
-        }, {passive:true});
-
-        /* Resize recenter */
-        var rT; window.addEventListener('resize', function(){
-          clearTimeout(rT); rT = setTimeout(function(){ goTo(cur); }, 120);
-        });
-
-        /* Init */
-        requestAnimationFrame(function(){ goTo(0); });
-      })();
-      </script>
-
-          <p style="text-align:center;color:var(--muted);margin-top:24px;font-size:.85rem;"> 8+ more real brand projects
+    </div>
+    <p style="text-align:center;color:var(--muted);margin-top:24px;font-size:.85rem;"> 8+ more real brand projects
       you'll build inside the course</p>
     </div>
   </section>
@@ -4083,12 +3877,6 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
         }
         .tv-counter strong { color: var(--cyan); font-weight: 700; }
 
-        /* Controls gap breathing room on all sizes */
-        .tv-controls {
-          flex-wrap: wrap;
-          row-gap: 12px;
-        }
-
         /* Controls row */
         .tv-controls {
           display: flex;
@@ -4125,9 +3913,6 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
           display: flex;
           gap: 6px;
           align-items: center;
-          flex-wrap: wrap;
-          justify-content: center;
-          max-width: 200px;
         }
         .tv-dot {
           width: 7px;
@@ -4152,68 +3937,15 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
           line-height: 1.6;
         }
 
-        /* ── TESTIMONIAL VIDEOS – RESPONSIVE BREAKPOINTS ── */
-
-        /* DESKTOP (>1024px) – default: 260px inactive, 310px active */
-
-        /* TABLET LANDSCAPE (≤1024px) */
-        @media (max-width: 1024px) {
-          .tv-slide { flex: 0 0 210px; border-radius: 20px; }
-          .tv-slide.tv-active { flex: 0 0 260px; }
-          .tv-slider-wrap::before,
-          .tv-slider-wrap::after { width: 72px; }
-          .tv-btn { width: 44px; height: 44px; font-size: 20px; }
-        }
-
-        /* TABLET PORTRAIT (≤768px) */
         @media (max-width: 768px) {
-          .tv-slide { flex: 0 0 170px; border-radius: 18px; }
-          .tv-slide.tv-active {
-            flex: 0 0 210px;
-            transform: scaleY(1.04); /* slightly less dramatic on tablet */
-          }
+          .tv-slide { flex: 0 0 200px; }
+          .tv-slide.tv-active { flex: 0 0 240px; }
           .tv-slider-wrap::before,
-          .tv-slider-wrap::after { width: 44px; }
-          .tv-controls { gap: 12px; margin-top: 20px; }
-          .tv-btn { width: 42px; height: 42px; font-size: 19px; }
-          .tv-dot { width: 6px; height: 6px; }
-          .tv-dot.active { width: 22px; }
-          .tv-caption { font-size: .78rem; padding: 0 16px; }
-          .tv-counter { font-size: .68rem; }
+          .tv-slider-wrap::after { width: 40px; }
         }
-
-        /* MOBILE LANDSCAPE (≤600px) */
-        @media (max-width: 600px) {
-          .tv-slide { flex: 0 0 44vw; border-radius: 16px; }
-          .tv-slide.tv-active {
-            flex: 0 0 54vw;
-            transform: scaleY(1.03);
-          }
-          .tv-slider-wrap::before,
-          .tv-slider-wrap::after { width: 28px; }
-          .tv-stage { padding: 16px 0 20px; }
-          .tv-badge { font-size: .55rem; padding: 3px 9px; }
-        }
-
-        /* MOBILE PORTRAIT (≤480px) */
         @media (max-width: 480px) {
-          .tv-slide { flex: 0 0 48vw; border-radius: 14px; }
-          .tv-slide.tv-active {
-            flex: 0 0 60vw;
-            transform: scaleY(1.025);
-          }
-          .tv-slider-wrap::before,
-          .tv-slider-wrap::after { width: 18px; }
-          .tv-controls { gap: 8px; }
-          .tv-btn { width: 38px; height: 38px; font-size: 17px; }
-          .tv-caption { display: none; } /* hide caption on small phones – save space */
-        }
-
-        /* VERY SMALL PHONES (≤360px) */
-        @media (max-width: 360px) {
-          .tv-slide { flex: 0 0 52vw; }
-          .tv-slide.tv-active { flex: 0 0 64vw; }
-          .tv-btn { width: 34px; height: 34px; font-size: 16px; }
+          .tv-slide { flex: 0 0 160px; }
+          .tv-slide.tv-active { flex: 0 0 200px; }
         }
       </style>
 
@@ -4351,7 +4083,6 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
       var totEl    = document.getElementById('tv-tot');
       var total    = slides.length;
       var current  = 0;
-      var GAP      = 20;
 
       totEl.textContent = total;
 
@@ -4363,33 +4094,37 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
         dotsWrap.appendChild(d);
       });
 
-      /* Classify all slides relative to active index */
+      function getSlideW() {
+        return slides[0] ? slides[0].getBoundingClientRect().width : 260;
+      }
+
+      function getGap() { return 20; }
+
       function classifySlides(idx) {
         slides.forEach(function (s, i) {
           s.classList.remove('tv-active', 'tv-adj', 'tv-far');
           var dist = Math.abs(i - idx);
-          if      (dist === 0) s.classList.add('tv-active');
+          if (dist === 0) s.classList.add('tv-active');
           else if (dist === 1) s.classList.add('tv-adj');
-          else                 s.classList.add('tv-far');
+          else s.classList.add('tv-far');
         });
       }
 
-      /* Center active slide in the stage – measures each slide's actual rendered width
-         so responsive flex changes are respected */
       function centerSlide(idx) {
-        var stage  = track.parentElement;
-        var stageW = stage.getBoundingClientRect().width;
-        var rects  = slides.map(function(s){ return s.getBoundingClientRect().width; });
-        var activeW = rects[idx] || rects[0] || 260;
-        var centerX = stageW / 2 - activeW / 2;
+        /* Offset so the active slide is centred in the stage viewport */
+        var stage     = track.parentElement; /* .tv-stage */
+        var stageW    = stage.getBoundingClientRect().width;
+        var slideW    = getSlideW();
+        var gap       = getGap();
+        var centerX   = stageW / 2 - slideW / 2;
 
-        /* Sum pixel widths of all slides before the active one */
-        var before = 0;
+        /* sum of widths before current slide */
+        var offsetBefore = 0;
         for (var i = 0; i < idx; i++) {
-          before += (rects[i] || activeW) + GAP;
+          offsetBefore += getSlideW() + gap;
         }
-
-        var offset = Math.max(0, before - centerX);
+        var offset = offsetBefore - centerX;
+        if (offset < 0) offset = 0;
         track.style.transform = 'translateX(-' + offset + 'px)';
       }
 
@@ -4400,6 +4135,7 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
       }
 
       function pauseOthers(activeIdx) {
+        /* pause any wistia video not in the active slide */
         slides.forEach(function (s, i) {
           if (i === activeIdx) return;
           var wp = s.querySelector('wistia-player');
@@ -4411,14 +4147,11 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
         idx = Math.max(0, Math.min(idx, total - 1));
         current = idx;
         classifySlides(idx);
-        /* Classify first so flex sizes are applied, then measure + center */
-        requestAnimationFrame(function() {
-          centerSlide(idx);
-        });
+        centerSlide(idx);
         updateDots(idx);
         curEl.textContent = idx + 1;
-        prevBtn.disabled  = idx === 0;
-        nextBtn.disabled  = idx === total - 1;
+        prevBtn.disabled = idx === 0;
+        nextBtn.disabled = idx === total - 1;
         pauseOthers(idx);
       }
 
@@ -4432,30 +4165,18 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
       prevBtn.addEventListener('click', function () { goTo(current - 1); });
       nextBtn.addEventListener('click', function () { goTo(current + 1); });
 
-      /* Keyboard – only when testimonial section is visible */
+      /* Keyboard */
       document.addEventListener('keydown', function (e) {
-        var sec = document.getElementById('testimonial-videos');
-        if (!sec) return;
-        var r = sec.getBoundingClientRect();
-        if (r.top < window.innerHeight && r.bottom > 0) {
-          if (e.key === 'ArrowLeft')  goTo(current - 1);
-          if (e.key === 'ArrowRight') goTo(current + 1);
-        }
+        if (e.key === 'ArrowLeft')  goTo(current - 1);
+        if (e.key === 'ArrowRight') goTo(current + 1);
       });
 
       /* Touch / swipe */
-      var touchStartX = 0, touchStartY = 0;
-      track.addEventListener('touchstart', function (e) {
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-      }, { passive: true });
+      var touchStartX = 0;
+      track.addEventListener('touchstart', function (e) { touchStartX = e.touches[0].clientX; }, { passive: true });
       track.addEventListener('touchend', function (e) {
         var dx = touchStartX - e.changedTouches[0].clientX;
-        var dy = Math.abs(touchStartY - e.changedTouches[0].clientY);
-        /* Only swipe if horizontal movement dominates */
-        if (Math.abs(dx) > 40 && Math.abs(dx) > dy) {
-          dx > 0 ? goTo(current + 1) : goTo(current - 1);
-        }
+        if (Math.abs(dx) > 40) { dx > 0 ? goTo(current + 1) : goTo(current - 1); }
       }, { passive: true });
 
       /* Re-center on resize */
