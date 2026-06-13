@@ -2559,7 +2559,7 @@
     </div>
     <div class="nav-links">
       <a href="#about">About</a><a href="#modules">Modules</a><a href="#coach">Coach</a>
-      <a href="#results">Results</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
+      <a href="#weekly-session">Sessions</a><a href="#meet-students">Students</a><a href="#results">Results</a><a href="#faq">FAQ</a><a href="#contact">Contact</a>
     </div>
     <div class="nav-actions">
       <a href="https://selar.com/motionessential" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">Enroll Now</a>
@@ -2568,7 +2568,7 @@
   </nav>
   <div class="mobile-menu" id="mobileMenu">
     <a href="#about">About</a><a href="#modules">Modules</a><a href="#benefits">What You'll Get</a>
-    <a href="#coach">Meet the Coach</a><a href="#results">Student Results</a>
+    <a href="#coach">Meet the Coach</a><a href="#weekly-session">Weekly Sessions</a><a href="#meet-students">Meet Students</a><a href="#results">Student Results</a>
     <a href="#faq">FAQ</a><a href="#contact">Contact</a>
     <a href="https://selar.com/motionessential" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Enroll Now </a>
   </div>
@@ -3864,6 +3864,8 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
   </section>
 
   <div class="divider"></div>
+
+
 
   <!-- SHOW REEL -->
   <section class="section section-alt" id="student-work">
@@ -5515,7 +5517,926 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
       wistiaEls.forEach(function (el) { var id = el.getAttribute('media-id'); if (!id) return; window._wq.push({ id: id, onReady: function (video) { wistiaPlayers.push(video); try { video.bind('play', function () { pauseAllExcept(video); }); } catch (e) { } } }); });
     })();
   </script>
+  <!-- WEEKLY SESSION -->
+  <section class="section" id="weekly-session">
+    <style>
+      .ws-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--r);
+        padding: 32px 36px;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(8px);
+        transition: transform .3s, border-color .3s, box-shadow .3s;
+      }
+      .ws-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--border2);
+        box-shadow: 0 24px 60px rgba(0,0,0,.4), 0 0 40px rgba(0,229,200,.07);
+      }
+      .ws-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: var(--grad);
+        opacity: 0;
+        transition: opacity .3s;
+      }
+      .ws-card:hover::before { opacity: 1; }
+      .ws-card-accent {
+        border-color: rgba(0,229,200,.28);
+      }
+      .ws-card-accent::before { opacity: 1; }
+      .ws-day-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(0,229,200,.09);
+        border: 1px solid rgba(0,229,200,.26);
+        border-radius: 100px;
+        padding: 5px 16px;
+        font-size: .68rem;
+        font-weight: 700;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--cyan);
+        margin-bottom: 16px;
+      }
+      .ws-day-badge .pulse-dot {
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background: var(--cyan);
+        animation: pulse 2s infinite;
+      }
+      .ws-card h3 {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+      .ws-card p {
+        font-size: .9rem;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+      .ws-time-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+      .ws-time-row svg {
+        color: var(--cyan);
+        flex-shrink: 0;
+      }
+      .ws-time-label {
+        font-size: .78rem;
+        color: var(--muted2);
+        font-weight: 500;
+      }
+      .ws-time-value {
+        font-size: .85rem;
+        color: var(--text);
+        font-weight: 700;
+      }
+      .ws-cta-row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-top: 48px;
+        padding: 36px 40px;
+        background: linear-gradient(135deg, rgba(1,255,169,.05), rgba(0,200,255,.05));
+        border: 1px solid rgba(0,229,200,.2);
+        border-radius: var(--r);
+        flex-wrap: wrap;
+      }
+      .ws-cta-row .ws-cta-text {
+        flex: 1;
+        min-width: 220px;
+      }
+      .ws-cta-row .ws-cta-text h4 {
+        font-size: 1.05rem;
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 6px;
+      }
+      .ws-cta-row .ws-cta-text p {
+        font-size: .85rem;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+      .ws-tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+      .ws-tag {
+        font-size: .68rem;
+        padding: 4px 12px;
+        border-radius: 100px;
+        background: rgba(0,229,200,.07);
+        border: 1px solid rgba(0,229,200,.17);
+        color: var(--cyan);
+        font-weight: 600;
+        letter-spacing: .04em;
+      }
+      .ws-screenshot-wrap {
+        position: relative;
+        margin-top: 52px;
+        padding: 56px 20px;
+        text-align: center;
+        border-radius: var(--r-lg);
+        overflow: hidden;
+        isolation: isolate;
+      }
+      .ws-screenshot-wrap::before,
+      .ws-screenshot-wrap::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(70px);
+        z-index: -1;
+        pointer-events: none;
+      }
+      .ws-screenshot-wrap::before {
+        width: 340px;
+        height: 340px;
+        background: radial-gradient(circle, rgba(1,255,169,.16), transparent 70%);
+        top: -80px;
+        left: 4%;
+      }
+      .ws-screenshot-wrap::after {
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(0,200,255,.14), transparent 70%);
+        bottom: -80px;
+        right: 4%;
+      }
+      .ws-screenshot-grid {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-image:
+          linear-gradient(rgba(0,229,200,.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0,229,200,.06) 1px, transparent 1px);
+        background-size: 36px 36px;
+        mask-image: radial-gradient(ellipse at center, rgba(0,0,0,.6), transparent 75%);
+        -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,.6), transparent 75%);
+      }
+      .ws-screenshot-frame {
+        position: relative;
+        z-index: 1;
+        max-width: 760px;
+        margin: 0 auto;
+        border-radius: var(--r);
+        overflow: hidden;
+        border: 1px solid var(--border2);
+        background: var(--card);
+        box-shadow: 0 24px 60px rgba(0,0,0,.4), 0 0 40px rgba(0,229,200,.07);
+      }
+      .ws-screenshot-frame::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: var(--grad);
+        z-index: 2;
+      }
+      .ws-screenshot-chrome {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        background: var(--dark2);
+        border-bottom: 1px solid var(--border);
+      }
+      .ws-chrome-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .ws-chrome-dot.red { background: #ff5f57; }
+      .ws-chrome-dot.yellow { background: #febc2e; }
+      .ws-chrome-dot.green { background: #28c840; }
+      .ws-chrome-title {
+        flex: 1;
+        text-align: center;
+        font-size: .75rem;
+        font-weight: 600;
+        color: var(--muted2);
+        letter-spacing: .04em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+      .ws-chrome-title svg {
+        width: 14px; height: 14px;
+        color: var(--cyan);
+      }
+      .ws-screenshot-frame img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .ws-screenshot-caption {
+        position: relative;
+        z-index: 1;
+        margin-top: 16px;
+        font-size: .85rem;
+        color: var(--muted);
+      }
+      @media (max-width: 768px) {
+        .ws-cta-row { flex-direction: column; text-align: center; }
+        .ws-cta-row .ws-cta-text { min-width: unset; }
+      }
+    </style>
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Live Learning</div>
+        <h2>Weekly <span class="grad-text">Live Sessions</span> Where Skills Get Sharpened</h2>
+        <p>Most courses drop you a folder of videos and disappear. Not here. Every single week, you get a live session where real questions get real answers — and where average students quietly become exceptional ones. This is where the magic actually happens.</p>
+      </div>
 
+      <div class="ws-screenshot-wrap">
+        <div class="ws-screenshot-grid"></div>
+        <div class="ws-screenshot-frame">
+          <div class="ws-screenshot-chrome">
+            <span class="ws-chrome-dot red"></span>
+            <span class="ws-chrome-dot yellow"></span>
+            <span class="ws-chrome-dot green"></span>
+            <div class="ws-chrome-title">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2" ry="2"/><path d="M22 8.5v7l-6-3.5z"/></svg>
+              Mavenmint Academy — Weekly Live Session
+            </div>
+          </div>
+         
+          <img src="./google-meet-session.jpg" alt="Live weekly Google Meet session with Mavenmint Academy students" loading="lazy" />
+        </div>
+        <p class="ws-screenshot-caption">A real Google Meet session from the Mavenmint Academy weekly live class.</p>
+      </div>
+
+      <div class="ws-cta-row">
+        <div class="ws-cta-text">
+          <h4>Three live sessions every week. Unlimited access. Zero extra charge.</h4>
+          <p>This is what separates Mavenmint Academy from every other course you've tried. You are never alone, never stuck, and never left behind. The only question is: are you going to be in the room this Monday?</p>
+        </div>
+        <a href="https://selar.com/motionessential" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Join the Next Live Session</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- MEET OUR STUDENTS -->
+  <section class="section section-alt" id="meet-students">
+    <style>
+      /* Student cards */
+      .ms-intro {
+        max-width: 720px;
+        margin: 0 auto 56px;
+        text-align: center;
+      }
+      .ms-intro p {
+        color: var(--muted);
+        font-size: .97rem;
+        line-height: 1.8;
+        margin-top: 14px;
+      }
+      .ms-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 14px;
+      }
+      /* The beautiful frame */
+      .ms-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .ms-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 14px;
+        overflow: hidden;
+        background: var(--dark3);
+        /* multi-layer decorative frame */
+        box-shadow:
+          0 0 0 1px rgba(0,229,200,.18),
+          0 0 0 3px rgba(4,14,24,.95),
+          0 0 0 4px rgba(0,229,200,.1),
+          0 6px 24px rgba(0,0,0,.5),
+          0 0 36px rgba(0,229,200,.04);
+        transition: transform .35s, box-shadow .35s;
+      }
+      .ms-card:hover .ms-frame {
+        transform: translateY(-6px) scale(1.01);
+        box-shadow:
+          0 0 0 1px rgba(0,229,200,.45),
+          0 0 0 4px rgba(4,14,24,.95),
+          0 0 0 6px rgba(0,229,200,.22),
+          0 20px 60px rgba(0,0,0,.65),
+          0 0 80px rgba(0,229,200,.12);
+      }
+      /* Gradient corner accents */
+      .ms-frame::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        border-radius: 14px;
+        background:
+          linear-gradient(135deg, rgba(1,255,169,.18) 0%, transparent 35%),
+          linear-gradient(315deg, rgba(0,200,255,.12) 0%, transparent 35%);
+        pointer-events: none;
+      }
+      /* Bottom gradient overlay for text legibility */
+      .ms-frame::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 55%;
+        z-index: 2;
+        background: linear-gradient(to top, rgba(4,14,24,.92) 0%, rgba(4,14,24,.5) 50%, transparent 100%);
+        border-radius: 0 0 14px 14px;
+        pointer-events: none;
+      }
+      .ms-frame img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 14px;
+        z-index: 1;
+        transition: transform .5s;
+        display: block;
+      }
+      .ms-card:hover .ms-frame img {
+        transform: scale(1.04);
+      }
+      /* Floating corner dots — decorative */
+      .ms-frame-corner {
+        position: absolute;
+        z-index: 4;
+        pointer-events: none;
+      }
+      .ms-frame-corner.tl { top: 6px; left: 6px; }
+      .ms-frame-corner.tr { top: 6px; right: 6px; }
+      .ms-frame-corner.bl { bottom: 38px; left: 6px; }
+      .ms-frame-corner.br { bottom: 38px; right: 6px; }
+      .ms-frame-corner svg {
+        width: 11px; height: 11px;
+        color: var(--cyan);
+        opacity: .55;
+      }
+      /* Overlay name/role */
+      .ms-frame-info {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        z-index: 5;
+        padding: 8px 8px 9px;
+        text-align: center;
+      }
+      .ms-frame-name {
+        font-size: .68rem;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -.01em;
+        line-height: 1.15;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .ms-frame-role {
+        font-size: .56rem;
+        color: var(--cyan);
+        font-weight: 600;
+        margin-top: 2px;
+        letter-spacing: .02em;
+        opacity: .9;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      /* Achievement pill overlaid on the frame */
+      .ms-achievement {
+        position: absolute;
+        top: 7px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 6;
+        background: var(--grad);
+        color: var(--dark);
+        font-size: .52rem;
+        font-weight: 800;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        padding: 3px 9px;
+        border-radius: 100px;
+        white-space: nowrap;
+        box-shadow: 0 3px 10px rgba(1,255,169,.35);
+      }
+      /* "+480 More" highlight tile */
+      .ms-more {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(1,255,169,.12), rgba(0,200,255,.08));
+        border: 1px dashed var(--border2);
+        padding: 8px;
+        transition: transform .35s, border-color .35s;
+      }
+      .ms-card:hover .ms-more {
+        transform: translateY(-6px) scale(1.01);
+        border-color: var(--cyan);
+      }
+      .ms-more-num {
+        font-size: 1.3rem;
+        font-weight: 900;
+        background: var(--grad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+      }
+      .ms-more-label {
+        font-size: .58rem;
+        font-weight: 700;
+        color: var(--text);
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        margin-top: 4px;
+        line-height: 1.3;
+      }
+      /* The big pull-quote below the grid */
+      .ms-pullquote {
+        margin-top: 64px;
+        text-align: center;
+        padding: 48px 40px;
+        background: linear-gradient(135deg, rgba(1,255,169,.04), rgba(0,200,255,.04));
+        border: 1px solid var(--border);
+        border-radius: var(--r-lg);
+        position: relative;
+        overflow: hidden;
+      }
+      .ms-pullquote::before {
+        content: '"';
+        position: absolute;
+        top: -20px; left: 32px;
+        font-size: 10rem;
+        font-weight: 900;
+        color: rgba(0,229,200,.06);
+        line-height: 1;
+        pointer-events: none;
+        font-family: 'Inter', sans-serif;
+      }
+      .ms-pullquote blockquote {
+        font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+        font-weight: 700;
+        color: var(--text);
+        line-height: 1.55;
+        max-width: 780px;
+        margin: 0 auto 20px;
+        position: relative;
+        z-index: 1;
+      }
+      .ms-pullquote cite {
+        font-size: .82rem;
+        color: var(--muted);
+        font-style: normal;
+        font-weight: 500;
+      }
+      .ms-pullquote cite span {
+        color: var(--cyan);
+        font-weight: 700;
+      }
+      @media (max-width: 1200px) {
+        .ms-grid { grid-template-columns: repeat(4, 1fr); }
+      }
+      @media (max-width: 1024px) {
+        .ms-grid { grid-template-columns: repeat(4, 1fr); }
+      }
+      @media (max-width: 560px) {
+        .ms-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .ms-pullquote { padding: 32px 24px; }
+      }
+    </style>
+    <div class="container">
+      <div class="ms-intro">
+        <div class="section-label" style="justify-content:center;">Real People. Real Results.</div>
+        <h2>Meet the Students <span class="grad-text">Changing Their Lives</span></h2>
+        <p>These are not actors. These are not carefully-selected outliers. These are ordinary people, students, job seekers, side-hustlers, parents. who picked up their smartphones, followed the system, and built something extraordinary. Every face below represents a decision that changed everything.</p>
+      </div>
+
+      <div class="ms-grid">
+
+        <!-- Student 1 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./makele-cross.webp" alt="Makele Cross" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Makele Cross</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 2 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./Anointed Michael.jpg" alt="Anointed Michael" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Anointed Michael</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 3 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./AbayomiJones.jpeg" alt="Abayomi Jones" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Abayomi Jones</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 4 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./EmmanuelFavour.jpeg" alt="Emmanuel Favour" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Emmanuel Favour</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 5 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./Adeyeye-Adebayo.jpeg" alt="Adeyeye Adebayo" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Adeyeye Adebayo</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 6 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./Amadi-praise.png" alt="Amadi Praise" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Amadi Praise</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 7 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./DeborahNgozi.jpg" alt="Deborah Ngozi" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Deborah Ngozi</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 8 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./victor.png" alt="Victor Akindun" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Victor Akindun</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 9 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./QuadriBolaji.jpeg" alt="Quadri Bolaji" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Quadri Bolaji</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 10 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./student/PHOTO-2025-10-01-13-42-10.jpg" alt="Marvellous Abiodun" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Marvellous Abiodun</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 11 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./student/RasaqMichael.jpg" alt="Rasaq Michael" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Rasaq Michael</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 12 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./student/st8.jpg" alt="Nonye Chiazor" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Nonye Chiazor</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 13 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./student/st3.jpg" alt="Naj Josiah" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Naj Josiah</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 14 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./student/st1.jpg" alt="Henry Kolawole" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Henry Kolawole</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 15 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./student/st5.jpg" alt="Raji Vispert" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Raji Vispert</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 16 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./student/st6.jpg" alt="Kinemma" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Kinemma</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 17 — open slot -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./student/2952a907-d564-419f-ba58-dd91f292f918.jpg" alt="New Student" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">New Student</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 18 — open slot -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./student/52df655d-bc87-4e95-b897-4f0b7927b391.jpg" alt="New Student" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">New Student</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 19 — open slot -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./student/805e625df2d7ce14ac82cecd036a9940.png" alt="New Student" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">New Student</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 20 — open slot -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./student/7c41228d-9f9e-4f0c-af97-386b3e2d6fe6.jpg" alt="New Student" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">New Student</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 21 — open slot -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./student/IMG_1060.JPG" alt="New Student" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">New Student</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 22 — open slot -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./student/IMG_1070.JPG" alt="New Student" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">New Student</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 23 — open slot -->
+        <div class="ms-card">
+          <div class="ms-frame">
+            <span class="ms-achievement">Keyframe Wizard</span>
+            <img src="./student/PHOTO-2025-10-01-14-44-09.jpg" alt="New Student" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">New Student</div>
+              <div class="ms-frame-role">Motion Graphics Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 24 — "+480 More" highlight -->
+        <div class="ms-card">
+          <div class="ms-more">
+            <div class="ms-more-num">+480</div>
+            <div class="ms-more-label">More students<br>earning &amp; growing</div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="ms-pullquote">
+        <blockquote>They didn't come in with connections. They didn't come in with expensive equipment. They came in with a smartphone and the willingness to show up. That's the only qualification that has ever mattered inside Mavenmint Academy.</blockquote>
+        <cite>— <span>Coach Femi</span>, Founder · Mavenmint Academy</cite>
+        <div style="margin-top:28px;">
+          <a href="https://selar.com/motionessential" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Become the Next Success Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
   <!-- COUNTRIES -->
   <section class="countries-section section" id="countries">
     <div class="container">
@@ -6115,7 +7036,7 @@ I am also a public speaker and have had the privilege of inspiring many people t
             href="#benefits">What You'll Get</a><a href="#certificate">Certificate</a><a href="https://selar.com/motionessential" target="_blank" rel="noopener noreferrer">Enroll Now</a>
         </div>
         <div class="footer-col">
-          <h5>About</h5><a href="#coach">Meet the Coach</a><a href="#results">Student Results</a><a
+          <h5>About</h5><a href="#coach">Meet the Coach</a><a href="#weekly-session">Weekly Sessions</a><a href="#meet-students">Meet Students</a><a href="#results">Student Results</a><a
             href="#student-work">Student Work</a><a href="#faq">FAQ</a>
         </div>
         <div class="footer-col">
