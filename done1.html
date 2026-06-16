@@ -7,19 +7,19 @@
   <meta name="description"
     content="Mavenmint Academy teaches beginners smartphone motion design with practical brand projects, UI animation, and video marketing. Learn real motion design skills from an industry coach." />
   <meta name="keywords"
-    content="motion design, smartphone motion design, UI animation, video marketing, motion graphics course, Mavenmint Academy" />
+    content="motion design, smartphone motion design, UI animation, video marketing, motion  course, Mavenmint Academy" />
   <meta name="robots" content="index, follow" />
   <meta name="author" content="Mavenmint Academy" />
   <meta property="og:title" content="Mavenmint Academy | Motion Design Institute" />
   <meta property="og:description"
-    content="Learn smartphone motion design with Mavenmint Academy. Build real brand videos, UI animations, and motion graphics using just your phone." />
+    content="Learn smartphone motion design with Mavenmint Academy. Build real brand videos, UI animations, and motion  using just your phone." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="./logo-mark.png" />
   <meta property="og:image:alt" content="Mavenmint Academy logo" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Mavenmint Academy | Motion Design Institute" />
   <meta name="twitter:description"
-    content="Learn smartphone motion design with Mavenmint Academy. Build real brand videos, UI animations, and motion graphics using just your phone." />
+    content="Learn smartphone motion design with Mavenmint Academy. Build real brand videos, UI animations, and motion  using just your phone." />
   <meta name="twitter:image" content="./logo-mark.png" />
   <meta name="twitter:site" content="@mavenmint" />
   <link rel="canonical" href="https://mavenmint.netlify.app/" />
@@ -1532,6 +1532,7 @@
     }
 
     .testimonials-grid {
+      align-items: flex-start;
       display: flex;
       gap: 20px;
       transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -1581,6 +1582,7 @@
       gap: 10px;
       padding-top: 14px;
       border-top: 1px solid var(--border);
+      margin-top: 20px;
     }
 
     .testi-avatar {
@@ -2366,6 +2368,7 @@
       }
 
       .testimonials-grid {
+      align-items: flex-start;
         flex: none;
       }
 
@@ -2711,7 +2714,7 @@
           <div class="section-label">About The Course</div>
           <h2>A <span class="grad-text">Beginner-Friendly</span> Path to Professional Motion Design</h2>
           <p style="color:var(--muted);margin-top:16px;line-height:1.8;font-size:.95rem;">The Motion Design Essential
-            Course is designed to teach you how to create professional motion graphics and animations using just your
+            Course is designed to teach you how to create professional motion  and animations using just your
             smartphone. Whether you are a complete beginner or someone looking to improve their creative skills, this
             course provides a step-by-step roadmap that helps you understand the foundations of motion design without
             confusion.</p>
@@ -3004,7 +3007,7 @@
             <li>Importance of Sound in Motion Design</li>
             <li>Adding Music &amp; Sound Effects to Animations</li>
             <li>How to Download Background Music</li>
-            <li>Types of SFX — Whoosh, Impact, Transitions</li>
+            <li>Types of SFX  Whoosh, Impact, Transitions</li>
             <li>Background Music Selection for Projects</li>
           </ul>
         </div>
@@ -3025,7 +3028,7 @@
             </svg></button>
           <ul class="mod-outline hidden">
             <li>How the Camera Works in Animation</li>
-            <li>Camera Movements — Zoom, Pan, Tilt</li>
+            <li>Camera Movements  Zoom, Pan, Tilt</li>
             <li>Creating Depth with Camera Motion</li>
             <li>Introduction to Layer Parenting</li>
             <li>Parent-Child Relationships for Complex Animations</li>
@@ -3107,7 +3110,7 @@
             <li>creating your showreel</li>
             <li>Branding Yourself as a Motion Designer</li>
             <li>Platforms for Your Portfolio</li>
-            <li>Ways to Earn — Freelance, email marketing, Content</li>
+            <li>Ways to Earn  Freelance, email marketing, Content</li>
             <li>How to create your rate card and invoice</li>
           </ul>
         </div>
@@ -3778,7 +3781,7 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
             </div>
             <div>
               <div class="res-name">Envato </div>
-              <div class="res-desc">Premium motion graphics and creative assets</div>
+              <div class="res-desc">Premium motion  and creative assets</div>
             </div>
           </div>
           <div class="resource-row">
@@ -3865,640 +3868,7 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
 
   <div class="divider"></div>
 
-  <!-- WEEKLY SESSION -->
-  <section class="section" id="weekly-session">
-    <style>
-      .ws-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 24px;
-        margin-top: 52px;
-      }
-      .ws-card {
-        background: var(--card);
-        border: 1px solid var(--border);
-        border-radius: var(--r);
-        padding: 32px 36px;
-        position: relative;
-        overflow: hidden;
-        backdrop-filter: blur(8px);
-        transition: transform .3s, border-color .3s, box-shadow .3s;
-      }
-      .ws-card:hover {
-        transform: translateY(-4px);
-        border-color: var(--border2);
-        box-shadow: 0 24px 60px rgba(0,0,0,.4), 0 0 40px rgba(0,229,200,.07);
-      }
-      .ws-card::before {
-        content: '';
-        position: absolute;
-        top: 0; left: 0; right: 0;
-        height: 2px;
-        background: var(--grad);
-        opacity: 0;
-        transition: opacity .3s;
-      }
-      .ws-card:hover::before { opacity: 1; }
-      .ws-card-accent {
-        border-color: rgba(0,229,200,.28);
-      }
-      .ws-card-accent::before { opacity: 1; }
-      .ws-day-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: rgba(0,229,200,.09);
-        border: 1px solid rgba(0,229,200,.26);
-        border-radius: 100px;
-        padding: 5px 16px;
-        font-size: .68rem;
-        font-weight: 700;
-        letter-spacing: .1em;
-        text-transform: uppercase;
-        color: var(--cyan);
-        margin-bottom: 16px;
-      }
-      .ws-day-badge .pulse-dot {
-        width: 6px; height: 6px;
-        border-radius: 50%;
-        background: var(--cyan);
-        animation: pulse 2s infinite;
-      }
-      .ws-card h3 {
-        font-size: 1.2rem;
-        font-weight: 800;
-        color: var(--text);
-        margin-bottom: 10px;
-        line-height: 1.3;
-      }
-      .ws-card p {
-        font-size: .9rem;
-        color: var(--muted);
-        line-height: 1.75;
-      }
-      .ws-time-row {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-top: 20px;
-        padding-top: 18px;
-        border-top: 1px solid var(--border);
-      }
-      .ws-time-row svg {
-        color: var(--cyan);
-        flex-shrink: 0;
-      }
-      .ws-time-label {
-        font-size: .78rem;
-        color: var(--muted2);
-        font-weight: 500;
-      }
-      .ws-time-value {
-        font-size: .85rem;
-        color: var(--text);
-        font-weight: 700;
-      }
-      .ws-cta-row {
-        display: flex;
-        align-items: center;
-        gap: 20px;
-        margin-top: 48px;
-        padding: 36px 40px;
-        background: linear-gradient(135deg, rgba(1,255,169,.05), rgba(0,200,255,.05));
-        border: 1px solid rgba(0,229,200,.2);
-        border-radius: var(--r);
-        flex-wrap: wrap;
-      }
-      .ws-cta-row .ws-cta-text {
-        flex: 1;
-        min-width: 220px;
-      }
-      .ws-cta-row .ws-cta-text h4 {
-        font-size: 1.05rem;
-        font-weight: 800;
-        color: var(--text);
-        margin-bottom: 6px;
-      }
-      .ws-cta-row .ws-cta-text p {
-        font-size: .85rem;
-        color: var(--muted);
-        line-height: 1.65;
-      }
-      .ws-tag-list {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 8px;
-        margin-top: 14px;
-      }
-      .ws-tag {
-        font-size: .68rem;
-        padding: 4px 12px;
-        border-radius: 100px;
-        background: rgba(0,229,200,.07);
-        border: 1px solid rgba(0,229,200,.17);
-        color: var(--cyan);
-        font-weight: 600;
-        letter-spacing: .04em;
-      }
-      @media (max-width: 768px) {
-        .ws-grid { grid-template-columns: 1fr; }
-        .ws-cta-row { flex-direction: column; text-align: center; }
-        .ws-cta-row .ws-cta-text { min-width: unset; }
-      }
-    </style>
-    <div class="container">
-      <div class="section-header">
-        <div class="section-label">Live Learning</div>
-        <h2>Weekly <span class="grad-text">Live Sessions</span> — Where Skills Get Sharpened</h2>
-        <p>Most courses drop you a folder of videos and disappear. Not here. Every single week, you get a live session where real questions get real answers — and where average students quietly become exceptional ones. This is where the magic actually happens.</p>
-      </div>
 
-      <div class="ws-grid">
-        <div class="ws-card ws-card-accent">
-          <div class="ws-day-badge"><span class="pulse-dot"></span> Every Monday</div>
-          <h3>Monday Momentum — Start Your Week With Direction</h3>
-          <p>Every Monday, Coach Femi opens the week with a focused live session. New techniques, current industry trends, and direct answers to your burning questions. You don't start the week guessing — you start it with clarity and a specific skill to practise.</p>
-          <div class="ws-tag-list">
-            <span class="ws-tag">New Techniques</span>
-            <span class="ws-tag">Q&amp;A</span>
-            <span class="ws-tag">Trend Watch</span>
-          </div>
-          <div class="ws-time-row">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <div>
-              <div class="ws-time-label">Session Time</div>
-              <div class="ws-time-value">Every Monday · Live on WhatsApp Community</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="ws-card">
-          <div class="ws-day-badge">Every Thursday</div>
-          <h3>Thursday Review — Your Work Gets Seen &amp; Improved</h3>
-          <p>Submit your project during the week and watch Coach Femi review it live in front of the group. This single session has produced more breakthroughs than any amount of solo practice. When your work is critiqued by an industry professional, you level up faster than you thought possible.</p>
-          <div class="ws-tag-list">
-            <span class="ws-tag">Project Review</span>
-            <span class="ws-tag">Live Critique</span>
-            <span class="ws-tag">Portfolio Feedback</span>
-          </div>
-          <div class="ws-time-row">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <div>
-              <div class="ws-time-label">Session Time</div>
-              <div class="ws-time-value">Every Thursday · Live on WhatsApp Community</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="ws-card">
-          <div class="ws-day-badge">Every Saturday</div>
-          <h3>Saturday Sprint — Hands-On Practice With the Coach</h3>
-          <p>Saturday sessions are all about doing. Coach leads a guided project from scratch — you follow along in real time, on your phone, building something you can add to your portfolio that same day. No more watching and waiting. You leave with actual work done.</p>
-          <div class="ws-tag-list">
-            <span class="ws-tag">Live Build</span>
-            <span class="ws-tag">Portfolio Project</span>
-            <span class="ws-tag">Guided Practice</span>
-          </div>
-          <div class="ws-time-row">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            <div>
-              <div class="ws-time-label">Session Time</div>
-              <div class="ws-time-value">Every Saturday · Live on WhatsApp Community</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="ws-card">
-          <div class="ws-day-badge">Ongoing</div>
-          <h3>Community Support — 24/7 Access to Coach &amp; Peers</h3>
-          <p>Between sessions, the learning never stops. Post your work, ask questions, and get feedback inside the Mavenmint community. Students who show up consistently here are the same ones closing clients and reporting wins every week. Access to the group alone is worth the enrolment.</p>
-          <div class="ws-tag-list">
-            <span class="ws-tag">WhatsApp Group</span>
-            <span class="ws-tag">Peer Accountability</span>
-            <span class="ws-tag">Coach Access</span>
-          </div>
-          <div class="ws-time-row">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            <div>
-              <div class="ws-time-label">Availability</div>
-              <div class="ws-time-value">Every day · Active community of 500+ students</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ws-cta-row">
-        <div class="ws-cta-text">
-          <h4>Three live sessions every week. Unlimited access. Zero extra charge.</h4>
-          <p>This is what separates Mavenmint Academy from every other course you've tried. You are never alone, never stuck, and never left behind. The only question is: are you going to be in the room this Monday?</p>
-        </div>
-        <a href="https://selar.com/motionessential" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Join the Next Live Session</a>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
-
-  <!-- MEET OUR STUDENTS -->
-  <section class="section section-alt" id="meet-students">
-    <style>
-      /* Student cards */
-      .ms-intro {
-        max-width: 720px;
-        margin: 0 auto 56px;
-        text-align: center;
-      }
-      .ms-intro p {
-        color: var(--muted);
-        font-size: .97rem;
-        line-height: 1.8;
-        margin-top: 14px;
-      }
-      .ms-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 28px;
-      }
-      /* The beautiful frame */
-      .ms-card {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .ms-frame {
-        position: relative;
-        width: 100%;
-        aspect-ratio: 3/4;
-        border-radius: 24px;
-        overflow: hidden;
-        background: var(--dark3);
-        /* multi-layer decorative frame */
-        box-shadow:
-          0 0 0 1px rgba(0,229,200,.18),
-          0 0 0 4px rgba(4,14,24,.95),
-          0 0 0 5px rgba(0,229,200,.1),
-          0 8px 40px rgba(0,0,0,.55),
-          0 0 60px rgba(0,229,200,.04);
-        transition: transform .35s, box-shadow .35s;
-      }
-      .ms-card:hover .ms-frame {
-        transform: translateY(-6px) scale(1.01);
-        box-shadow:
-          0 0 0 1px rgba(0,229,200,.45),
-          0 0 0 4px rgba(4,14,24,.95),
-          0 0 0 6px rgba(0,229,200,.22),
-          0 20px 60px rgba(0,0,0,.65),
-          0 0 80px rgba(0,229,200,.12);
-      }
-      /* Gradient corner accents */
-      .ms-frame::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        z-index: 3;
-        border-radius: 24px;
-        background:
-          linear-gradient(135deg, rgba(1,255,169,.18) 0%, transparent 35%),
-          linear-gradient(315deg, rgba(0,200,255,.12) 0%, transparent 35%);
-        pointer-events: none;
-      }
-      /* Bottom gradient overlay for text legibility */
-      .ms-frame::after {
-        content: '';
-        position: absolute;
-        bottom: 0; left: 0; right: 0;
-        height: 55%;
-        z-index: 2;
-        background: linear-gradient(to top, rgba(4,14,24,.92) 0%, rgba(4,14,24,.5) 50%, transparent 100%);
-        border-radius: 0 0 24px 24px;
-        pointer-events: none;
-      }
-      .ms-frame img {
-        position: absolute;
-        inset: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        border-radius: 24px;
-        z-index: 1;
-        transition: transform .5s;
-        display: block;
-      }
-      .ms-card:hover .ms-frame img {
-        transform: scale(1.04);
-      }
-      /* Floating corner dots — decorative */
-      .ms-frame-corner {
-        position: absolute;
-        z-index: 4;
-        pointer-events: none;
-      }
-      .ms-frame-corner.tl { top: 10px; left: 10px; }
-      .ms-frame-corner.tr { top: 10px; right: 10px; }
-      .ms-frame-corner.bl { bottom: 62px; left: 10px; }
-      .ms-frame-corner.br { bottom: 62px; right: 10px; }
-      .ms-frame-corner svg {
-        width: 18px; height: 18px;
-        color: var(--cyan);
-        opacity: .55;
-      }
-      /* Overlay name/role */
-      .ms-frame-info {
-        position: absolute;
-        bottom: 0; left: 0; right: 0;
-        z-index: 5;
-        padding: 14px 16px 16px;
-        text-align: center;
-      }
-      .ms-frame-name {
-        font-size: .88rem;
-        font-weight: 800;
-        color: #fff;
-        letter-spacing: -.01em;
-        line-height: 1.2;
-      }
-      .ms-frame-role {
-        font-size: .7rem;
-        color: var(--cyan);
-        font-weight: 600;
-        margin-top: 3px;
-        letter-spacing: .03em;
-        opacity: .9;
-      }
-      /* Achievement pill overlaid on the frame */
-      .ms-achievement {
-        position: absolute;
-        top: 12px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 6;
-        background: var(--grad);
-        color: var(--dark);
-        font-size: .6rem;
-        font-weight: 800;
-        letter-spacing: .09em;
-        text-transform: uppercase;
-        padding: 4px 13px;
-        border-radius: 100px;
-        white-space: nowrap;
-        box-shadow: 0 4px 16px rgba(1,255,169,.35);
-      }
-      /* Placeholder when no photo yet */
-      .ms-avatar-placeholder {
-        position: absolute;
-        inset: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        background: linear-gradient(135deg, rgba(0,229,200,.09), rgba(0,200,255,.06));
-        z-index: 1;
-      }
-      .ms-avatar-placeholder svg {
-        width: 56px; height: 56px;
-        color: rgba(0,229,200,.3);
-      }
-      .ms-bottom {
-        margin-top: 12px;
-        text-align: center;
-      }
-      .ms-stat {
-        display: inline-block;
-        font-size: .78rem;
-        font-weight: 700;
-        color: var(--cyan);
-        background: rgba(0,229,200,.08);
-        border: 1px solid rgba(0,229,200,.18);
-        border-radius: 100px;
-        padding: 4px 13px;
-        margin-top: 4px;
-      }
-      /* The big pull-quote below the grid */
-      .ms-pullquote {
-        margin-top: 64px;
-        text-align: center;
-        padding: 48px 40px;
-        background: linear-gradient(135deg, rgba(1,255,169,.04), rgba(0,200,255,.04));
-        border: 1px solid var(--border);
-        border-radius: var(--r-lg);
-        position: relative;
-        overflow: hidden;
-      }
-      .ms-pullquote::before {
-        content: '"';
-        position: absolute;
-        top: -20px; left: 32px;
-        font-size: 10rem;
-        font-weight: 900;
-        color: rgba(0,229,200,.06);
-        line-height: 1;
-        pointer-events: none;
-        font-family: 'Inter', sans-serif;
-      }
-      .ms-pullquote blockquote {
-        font-size: clamp(1.1rem, 2.2vw, 1.45rem);
-        font-weight: 700;
-        color: var(--text);
-        line-height: 1.55;
-        max-width: 780px;
-        margin: 0 auto 20px;
-        position: relative;
-        z-index: 1;
-      }
-      .ms-pullquote cite {
-        font-size: .82rem;
-        color: var(--muted);
-        font-style: normal;
-        font-weight: 500;
-      }
-      .ms-pullquote cite span {
-        color: var(--cyan);
-        font-weight: 700;
-      }
-      @media (max-width: 1024px) {
-        .ms-grid { grid-template-columns: repeat(2, 1fr); }
-      }
-      @media (max-width: 560px) {
-        .ms-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
-        .ms-pullquote { padding: 32px 24px; }
-      }
-    </style>
-    <div class="container">
-      <div class="ms-intro">
-        <div class="section-label" style="justify-content:center;">Real People. Real Results.</div>
-        <h2>Meet the Students <span class="grad-text">Changing Their Lives</span></h2>
-        <p>These are not actors. These are not carefully-selected outliers. These are ordinary people, students, job seekers, side-hustlers, parents. who picked up their smartphones, followed the system, and built something extraordinary. Every face below represents a decision that changed everything.</p>
-      </div>
-
-      <div class="ms-grid">
-
-        <!-- Student 1 -->
-        <div class="ms-card">
-          <div class="ms-frame">
-            <span class="ms-achievement">₦1.3M PC</span>
-            <img src="./makele-cross.webp" alt="Makele Cross" loading="lazy" />
-            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
-            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
-            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
-            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
-            <div class="ms-frame-info">
-              <div class="ms-frame-name">Makele Cross</div>
-              <div class="ms-frame-role">Brand Motion Designer</div>
-            </div>
-          </div>
-          <div class="ms-bottom">
-            <div class="ms-stat">Bought a Dell PC · ₦1.3M</div>
-          </div>
-        </div>
-
-        <!-- Student 2 -->
-        <div class="ms-card">
-          <div class="ms-frame">
-            <span class="ms-achievement">$500 Gig</span>
-            <img src="./Anointed Michael.jpg" alt="Anointed Michael" loading="lazy" />
-            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
-            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
-            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
-            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
-            <div class="ms-frame-info">
-              <div class="ms-frame-name">Anointed Michael</div>
-              <div class="ms-frame-role">Explainer Video Creator</div>
-            </div>
-          </div>
-          <div class="ms-bottom">
-            <div class="ms-stat">Closed $500 Explainer Gig</div>
-          </div>
-        </div>
-
-        <!-- Student 3 -->
-        <div class="ms-card">
-          <div class="ms-frame">
-            <span class="ms-achievement">₦300K/Month</span>
-            <img src="./AbayomiJones.jpeg" alt="Abayomi Jones" loading="lazy" />
-            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
-            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
-            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
-            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
-            <div class="ms-frame-info">
-              <div class="ms-frame-name">Abayomi Jones</div>
-              <div class="ms-frame-role">Hired via LinkedIn</div>
-            </div>
-          </div>
-          <div class="ms-bottom">
-            <div class="ms-stat">Full-time job · ₦300K/month</div>
-          </div>
-        </div>
-
-        <!-- Student 4 -->
-        <div class="ms-card">
-          <div class="ms-frame">
-            <span class="ms-achievement">₦340K First Client</span>
-            <img src="./EmmanuelFavour.jpeg" alt="Emmanuel Favour" loading="lazy" />
-            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
-            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
-            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
-            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
-            <div class="ms-frame-info">
-              <div class="ms-frame-name">Emmanuel Favour</div>
-              <div class="ms-frame-role">Fintech Video Specialist</div>
-            </div>
-          </div>
-          <div class="ms-bottom">
-            <div class="ms-stat">First client · ₦340K project</div>
-          </div>
-        </div>
-
-        <!-- Student 5 -->
-        <div class="ms-card">
-          <div class="ms-frame">
-            <span class="ms-achievement">iPhone 13 Pro</span>
-            <img src="./Adeyeye-Adebayo.jpeg" alt="Adeyeye Adebayo" loading="lazy" />
-            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
-            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
-            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
-            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
-            <div class="ms-frame-info">
-              <div class="ms-frame-name">Adeyeye Adebayo</div>
-              <div class="ms-frame-role">Mobile Motion Designer</div>
-            </div>
-          </div>
-          <div class="ms-bottom">
-            <div class="ms-stat">iPhone 13 Pro · ₦600K</div>
-          </div>
-        </div>
-
-        <!-- Student 6 -->
-        <div class="ms-card">
-          <div class="ms-frame">
-            <span class="ms-achievement">Web3 Client</span>
-            <img src="./Amadi-praise.png" alt="Amadi Praise" loading="lazy" />
-            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
-            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
-            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
-            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
-            <div class="ms-frame-info">
-              <div class="ms-frame-name">Amadi Praise</div>
-              <div class="ms-frame-role">Web3 Motion Designer</div>
-            </div>
-          </div>
-          <div class="ms-bottom">
-            <div class="ms-stat">$400 Web3 Client Closed</div>
-          </div>
-        </div>
-
-        <!-- Student 7 -->
-        <div class="ms-card">
-          <div class="ms-frame">
-            <span class="ms-achievement">New PC ₦500K+</span>
-            <img src="./DeborahNgozi.jpg" alt="Deborah Ngozi" loading="lazy" />
-            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
-            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
-            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
-            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
-            <div class="ms-frame-info">
-              <div class="ms-frame-name">Deborah Ngozi</div>
-              <div class="ms-frame-role">Motion Design Graduate</div>
-            </div>
-          </div>
-          <div class="ms-bottom">
-            <div class="ms-stat">Brand new PC · ₦500K+</div>
-          </div>
-        </div>
-
-        <!-- Student 8 -->
-        <div class="ms-card">
-          <div class="ms-frame">
-            <span class="ms-achievement">PC · ₦480K</span>
-            <img src="./victor.png" alt="Victor Akindun" loading="lazy" />
-            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
-            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
-            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
-            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
-            <div class="ms-frame-info">
-              <div class="ms-frame-name">Victor Akindun</div>
-              <div class="ms-frame-role">Motion Design Student</div>
-            </div>
-          </div>
-          <div class="ms-bottom">
-            <div class="ms-stat">New PC · ₦480K from earnings</div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="ms-pullquote">
-        <blockquote>They didn't come in with connections. They didn't come in with expensive equipment. They came in with a smartphone and the willingness to show up. That's the only qualification that has ever mattered inside Mavenmint Academy.</blockquote>
-        <cite>— <span>Coach Femi</span>, Founder · Mavenmint Academy</cite>
-        <div style="margin-top:28px;">
-          <a href="https://selar.com/motionessential" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Become the Next Success Story</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <div class="divider"></div>
 
   <!-- SHOW REEL -->
   <section class="section section-alt" id="student-work">
@@ -4845,7 +4215,7 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
             it. But today, it has become a reality. Thank you so much for your guidance, mentorship, and teachings
             throughout this journey. God bless you, Coach.</p>
           <div class="testi-author">
-            <div class="testi-avatar"><img src="./makele-cross.webp" alt="Makele Cross" /></div>
+            <div class="testi-avatar"><img src="./student/Makelecross.jpg" alt="Makele Cross" /></div>
             <div>
               <div class="testi-name">Makele Cross</div>
               <div class="testi-role">Purchased new device via motion design earnings</div>
@@ -4943,6 +4313,94 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
             <div>
               <div class="testi-name">Emmanuel Favour</div>
               <div class="testi-role">First client explainer video project</div>
+            </div>
+          </div>
+        </div>
+        <div class="card testi-card">
+          <div class="testi-amount">₦500K Earned</div>
+          <p class="testi-text">I joined Maven Mint Academy in 2023, and it remains one of the best decisions I've made. Since then, I've worked with brands in Nigeria and abroad, earned in dollars, and made close to ₦500,000 creating motion designs with just my smartphone. I'm truly grateful to our coach and the academy for the knowledge, guidance, and opportunities that have helped me grow as a creative.</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><img src="./student/MarvellousAbiodun.jpg" alt="Marvellous Abiodun" /></div>
+            <div>
+              <div class="testi-name">Marvellous Abiodun</div>
+              <div class="testi-role">Working with brands in Nigeria &amp; abroad, earning in dollars</div>
+            </div>
+          </div>
+        </div>
+        <div class="card testi-card">
+          <div class="testi-amount">₦600K Earned</div>
+          <p class="testi-text">Enrolling in the Motion Design Essential Course in 2024 has truly been a blessing for me. I never believed I could achieve this much using just my smartphone. I've been able to create videos for brands in fintech, SaaS, and other sectors, and I've earned close to ₦600,000 through motion design. I don't regret joining the academy at all. I'm really grateful to Coach Femi for the powerful teaching and to Maven Mint Academy for the opportunity and support.</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><img src="./student/RasaqMichael.jpg" alt="Rasaq Michael" /></div>
+            <div>
+              <div class="testi-name">Rasaq Michael</div>
+              <div class="testi-role">Creating videos for fintech &amp; SaaS brands</div>
+            </div>
+          </div>
+        </div>
+        <div class="card testi-card">
+          <div class="testi-amount">₦700K in 3 Weeks</div>
+          <p class="testi-text">I want to say a big thank you for the Motion Design Essential Course. Through it, I've been able to achieve things I never thought were possible. In the past 3 weeks alone, I've earned over ₦700,000 creating videos for brands using just my smartphone. It has honestly been an amazing experience. I'm truly grateful to you, sir, for creating this course and the academy. I've experienced real transformation, and I'm deeply thankful.</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><img src="./student/st8.jpg" alt="Nonye Chiazor" /></div>
+            <div>
+              <div class="testi-name">Nonye Chiazor</div>
+              <div class="testi-role">₦700,000 earned in 3 weeks via motion design</div>
+            </div>
+          </div>
+        </div>
+        <div class="card testi-card">
+          <div class="testi-amount">New PC, ₦400K+</div>
+          <p class="testi-text">Getting the course and being part of the Keyframe Wizards community is one of the best things that has happened to me. I've been able to achieve so much, from getting a new PC worth over ₦400k for myself to working with brands and creating videos for them, along with many other opportunities. All of this has been possible because of this course and the academy. I want to say a big thank you to Coach Femi for building this academy.</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><img src="./student/NajJosiah.jpg" alt="Naj Josiah" /></div>
+            <div>
+              <div class="testi-name">Naj Josiah</div>
+              <div class="testi-role">New ₦400k+ PC via the Keyframe Wizards community</div>
+            </div>
+          </div>
+        </div>
+        <div class="card testi-card">
+          <div class="testi-amount">New PC + Brand Deals</div>
+          <p class="testi-text">I never imagined I could achieve this much in such a short time just by learning motion design with my smartphone. Within a few months, I've been able to get a new PC and start working with real brands, all thanks to the skills I learned. I'm truly grateful to Coach Femi and Maven Mint Academy for the guidance, support, and life-changing teachings. I appreciate everything sincerely.</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><img src="./student/HenryKolawole.jpg" alt="Henry Kolawole" /></div>
+            <div>
+              <div class="testi-name">Henry Kolawole</div>
+              <div class="testi-role">New PC and real brand deals within months</div>
+            </div>
+          </div>
+        </div>
+        <div class="card testi-card">
+          <div class="testi-amount">Full Setup, ₦900K+</div>
+          <p class="testi-text">I'm just so happy and excited seeing what I've been able to achieve through the motion design course I enrolled in. I've been able to set up my workspace fully, get a new PC, a brand new monitor, and build everything I needed for my setup  worth over ₦900k. This wouldn't have been possible without the course. I just want to say a big thank you to Coach Femi Maven and Maven Mint Academy for this opportunity, teaching, and guidance.</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><img src="./student/RajiVispert.jpg" alt="Raji Vispert" /></div>
+            <div>
+              <div class="testi-name">Raji Vispert</div>
+              <div class="testi-role">Full ₦900k+ creative workspace upgrade</div>
+            </div>
+          </div>
+        </div>
+        <div class="card testi-card">
+          <div class="testi-amount">₦500K+, Dollars &amp; Naira</div>
+          <p class="testi-text">I enrolled in the Motion Design Essential Course in 2024, and now in 2026, I can confidently say that I have no regrets. Through the course, I've been able to achieve so much  from working with different brands and earning in both dollars and naira to making over ₦500,000 and upgrading my workspace. These are things I never imagined would be possible when I first started. I'm truly grateful to Coach Femi for always being available to guide, support, and assist whenever needed, and to Maven Mint Academy for creating an environment where creatives can grow and succeed.</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><img src="./student/Kinemma.jpg" alt="Kinemma" /></div>
+            <div>
+              <div class="testi-name">Kinemma</div>
+              <div class="testi-role">Earning in dollars &amp; naira, ₦500,000+ made</div>
+            </div>
+          </div>
+        </div>
+        <div class="card testi-card">
+          <div class="testi-amount">Life-Changing Growth</div>
+          <p class="testi-text">Getting to know about the Motion Design Essential Course and meeting our coach, Femi Maven, has been a life-changing experience for me. Through the course and Maven Mint Academy, I've been able to achieve so much  from working with brands in the fintech, SaaS, and other industries to earning in dollars and building opportunities I never thought possible. I'm truly grateful to Coach Femi for the continuous guidance, support, and mentorship. The knowledge and direction I've received have played a huge role in my growth.</p>
+          <div class="testi-author">
+            <div class="testi-avatar"><img src="./student/st2.jpg" alt="Timothy Goodness" /></div>
+            <div>
+              <div class="testi-name">Timothy Goodness</div>
+              <div class="testi-role">Earning in dollars working with fintech &amp; SaaS brands</div>
             </div>
           </div>
         </div>
@@ -5190,11 +4648,11 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
                 <div class="ss-card-result">New HP laptop – pushed motion design journey</div>
               </div>
             </div>
-            <div class="ss-card" data-name="Kingsley" data-result="$250/month retainer – 4 motion graphics videos" data-src="./ss_kingsley.jpg">
+            <div class="ss-card" data-name="Kingsley" data-result="$250/month retainer – 4 motion  videos" data-src="./ss_kingsley.jpg">
               <img src="./ss_kingsley.jpg" alt="Kingsley result screenshot" loading="lazy" />
               <div class="ss-card-caption">
                 <div class="ss-card-name">Kingsley Kelechi</div>
-                <div class="ss-card-result">$250/month retainer – 4 motion graphics videos</div>
+                <div class="ss-card-result">$250/month retainer – 4 motion  videos</div>
               </div>
             </div>
             <div class="ss-card" data-name="Emmanuel Favour" data-result="₦340K first Fintech explainer video project" data-src="./ss_emmanuel.jpg">
@@ -5218,10 +4676,10 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
                 <div class="ss-card-result">₦700K+ earned in 3 weeks – motion & voice over</div>
               </div>
             </div>
-            <div class="ss-card" data-name="Marvel Art" data-result="2 gigs in May – retainer + project for Saudi Real Estate Co." data-src="./IMG_20260608_132659_732.jpg">
-              <img src="./IMG_20260608_132659_732.jpg" alt="Marvel Art result screenshot" loading="lazy" />
+            <div class="ss-card" data-name="Marvellous Abiodun" data-result="2 gigs in May – retainer + project for Saudi Real Estate Co." data-src="./IMG_20260608_132659_732.jpg">
+              <img src="./IMG_20260608_132659_732.jpg" alt="Marvellous Abiodun result screenshot" loading="lazy" />
               <div class="ss-card-caption">
-                <div class="ss-card-name">Marvel Art</div>
+                <div class="ss-card-name">Marvellous Abiodun</div>
                 <div class="ss-card-result">2 gigs in May – retainer + Saudi Real Estate project</div>
               </div>
             </div>
@@ -5398,6 +4856,69 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
               <div class="ss-card-caption">
                 <div class="ss-card-name">Enenche Francis</div>
                 <div class="ss-card-result">New Redmi Pad 2 tablet purchased</div>
+              </div>
+            </div>
+            <div class="ss-card" data-name="Emmanuel Favour" data-result="$1,125 cumulative earnings from one client – 9 months" data-src="./IMG-20260609-WA0030.jpg">
+              <img src="./testi/IMG-20260609-WA0030.jpg" alt="Emmanuel Favour earnings milestone screenshot" loading="lazy" />
+              <div class="ss-card-caption">
+                <div class="ss-card-name">Emmanuel Favour</div>
+                <div class="ss-card-result">$1,125 cumulative earnings from one client</div>
+              </div>
+            </div>
+            <div class="ss-card" data-name="Rasaq Micheal" data-result="₦200K gig closed – 50% part payment received" data-src="./IMG-20260609-WA0045.jpg">
+              <img src="./testi/IMG-20260609-WA0045.jpg" alt="Rasaq Micheal new gig screenshot" loading="lazy" />
+              <div class="ss-card-caption">
+                <div class="ss-card-name">Rasaq Micheal</div>
+                <div class="ss-card-result">₦200K gig closed – 50% part payment received</div>
+              </div>
+            </div>
+            <div class="ss-card" data-name="Anointed Michael" data-result="New Samsung phone for more design work" data-src="./IMG-20260609-WA0069.jpg">
+              <img src="./testi/IMG-20260609-WA0069.jpg" alt="Anointed Michael new Samsung phone screenshot" loading="lazy" />
+              <div class="ss-card-caption">
+                <div class="ss-card-name">Anointed Michael</div>
+                <div class="ss-card-result">New Samsung phone for more design work</div>
+              </div>
+            </div>
+            <div class="ss-card" data-name="Anointed Michael" data-result="Closed a gig – 200 USDT withdrawal" data-src="./IMG-20260612-WA0024.jpg">
+              <img src="./testi/IMG-20260612-WA0024.jpg" alt="Anointed Michael gig payment screenshot" loading="lazy" />
+              <div class="ss-card-caption">
+                <div class="ss-card-name">Anointed Michael</div>
+                <div class="ss-card-result">Closed a gig – 200 USDT withdrawal</div>
+              </div>
+            </div>
+            <div class="ss-card" data-name="Ojo Joseph" data-result="Remote Motion  & Video Content Designer role – ₦200K" data-src="./IMG-20260612-WA0025.jpg">
+              <img src="./testi/IMG-20260612-WA0025.jpg" alt="Ojo Joseph remote contract role screenshot" loading="lazy" />
+              <div class="ss-card-caption">
+                <div class="ss-card-name">Ojo Joseph</div>
+                <div class="ss-card-result">Remote Motion  &amp; Video Content Designer role – ₦200K</div>
+              </div>
+            </div>
+            <div class="ss-card" data-name="Bachir" data-result="Worked on a project for the Presidency of his country" data-src="./IMG-20260612-WA0026.jpg">
+              <img src="./testi/IMG-20260612-WA0026.jpg" alt="Bachir Presidency project screenshot" loading="lazy" />
+              <div class="ss-card-caption">
+                <div class="ss-card-name">Bachir</div>
+                <div class="ss-card-result">Worked on a project for the Presidency of his country</div>
+              </div>
+            </div>
+            <div class="ss-card" data-name="Gift Odichinma" data-result="New HP EliteBook PC bought after saving up" data-src="./IMG-20260612-WA0027.jpg">
+              <img src="./testi/IMG-20260612-WA0027.jpg" alt="New HP EliteBook PC screenshot" loading="lazy" />
+              <div class="ss-card-caption">
+                <div class="ss-card-name">Gift Odichinma</div>
+                <div class="ss-card-result">New HP EliteBook PC bought after saving up</div>
+              </div>
+            </div>
+            <div class="ss-card" data-name="Makele cross" data-result="New 34-inch monitor purchased from earnings" data-src="./IMG-20260612-WA0028.jpg">
+              <img src="./testi/IMG-20260612-WA0028.jpg" alt="New 34 inch monitor screenshot" loading="lazy" />
+              <div class="ss-card-caption">
+                <div class="ss-card-name">Makele cross</div>
+                <div class="ss-card-result">New 34-inch monitor purchased from earnings</div>
+              </div>
+            </div>
+            <div class="ss-card" data-name="Raji Vispert" data-result="New desk & monitor setup – workspace upgrade" data-src="./IMG-20260612-WA0034.jpg">
+              <img src="./testi/IMG-20260612-WA0034.jpg" alt="Raji Vispert new workspace setup screenshot" loading="lazy" />
+              <div class="ss-card-caption">
+                <div class="ss-card-name">Raji Vispert</div>
+                <div class="ss-card-result">New desk &amp; monitor setup – workspace upgrade</div>
               </div>
             </div>
           </div><!-- /ss-scroll -->
@@ -6150,7 +5671,945 @@ These are real motion design projects created for fintech, AI, tech, crypto, e-c
       wistiaEls.forEach(function (el) { var id = el.getAttribute('media-id'); if (!id) return; window._wq.push({ id: id, onReady: function (video) { wistiaPlayers.push(video); try { video.bind('play', function () { pauseAllExcept(video); }); } catch (e) { } } }); });
     })();
   </script>
+  <!-- WEEKLY SESSION -->
+  <section class="section" id="weekly-session">
+    <style>
+      .ws-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--r);
+        padding: 32px 36px;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(8px);
+        transition: transform .3s, border-color .3s, box-shadow .3s;
+      }
+      .ws-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--border2);
+        box-shadow: 0 24px 60px rgba(0,0,0,.4), 0 0 40px rgba(0,229,200,.07);
+      }
+      .ws-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: var(--grad);
+        opacity: 0;
+        transition: opacity .3s;
+      }
+      .ws-card:hover::before { opacity: 1; }
+      .ws-card-accent {
+        border-color: rgba(0,229,200,.28);
+      }
+      .ws-card-accent::before { opacity: 1; }
+      .ws-day-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(0,229,200,.09);
+        border: 1px solid rgba(0,229,200,.26);
+        border-radius: 100px;
+        padding: 5px 16px;
+        font-size: .68rem;
+        font-weight: 700;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        color: var(--cyan);
+        margin-bottom: 16px;
+      }
+      .ws-day-badge .pulse-dot {
+        width: 6px; height: 6px;
+        border-radius: 50%;
+        background: var(--cyan);
+        animation: pulse 2s infinite;
+      }
+      .ws-card h3 {
+        font-size: 1.2rem;
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 10px;
+        line-height: 1.3;
+      }
+      .ws-card p {
+        font-size: .9rem;
+        color: var(--muted);
+        line-height: 1.75;
+      }
+      .ws-time-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-top: 20px;
+        padding-top: 18px;
+        border-top: 1px solid var(--border);
+      }
+      .ws-time-row svg {
+        color: var(--cyan);
+        flex-shrink: 0;
+      }
+      .ws-time-label {
+        font-size: .78rem;
+        color: var(--muted2);
+        font-weight: 500;
+      }
+      .ws-time-value {
+        font-size: .85rem;
+        color: var(--text);
+        font-weight: 700;
+      }
+      .ws-cta-row {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-top: 48px;
+        padding: 36px 40px;
+        background: linear-gradient(135deg, rgba(1,255,169,.05), rgba(0,200,255,.05));
+        border: 1px solid rgba(0,229,200,.2);
+        border-radius: var(--r);
+        flex-wrap: wrap;
+      }
+      .ws-cta-row .ws-cta-text {
+        flex: 1;
+        min-width: 220px;
+      }
+      .ws-cta-row .ws-cta-text h4 {
+        font-size: 1.05rem;
+        font-weight: 800;
+        color: var(--text);
+        margin-bottom: 6px;
+      }
+      .ws-cta-row .ws-cta-text p {
+        font-size: .85rem;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+      .ws-tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 14px;
+      }
+      .ws-tag {
+        font-size: .68rem;
+        padding: 4px 12px;
+        border-radius: 100px;
+        background: rgba(0,229,200,.07);
+        border: 1px solid rgba(0,229,200,.17);
+        color: var(--cyan);
+        font-weight: 600;
+        letter-spacing: .04em;
+      }
+      .ws-screenshot-wrap {
+        position: relative;
+        margin-top: 52px;
+        padding: 56px 20px;
+        text-align: center;
+        border-radius: var(--r-lg);
+        overflow: hidden;
+        isolation: isolate;
+      }
+      .ws-screenshot-wrap::before,
+      .ws-screenshot-wrap::after {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(70px);
+        z-index: -1;
+        pointer-events: none;
+      }
+      .ws-screenshot-wrap::before {
+        width: 340px;
+        height: 340px;
+        background: radial-gradient(circle, rgba(1,255,169,.16), transparent 70%);
+        top: -80px;
+        left: 4%;
+      }
+      .ws-screenshot-wrap::after {
+        width: 300px;
+        height: 300px;
+        background: radial-gradient(circle, rgba(0,200,255,.14), transparent 70%);
+        bottom: -80px;
+        right: 4%;
+      }
+      .ws-screenshot-grid {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background-image:
+          linear-gradient(rgba(0,229,200,.06) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(0,229,200,.06) 1px, transparent 1px);
+        background-size: 36px 36px;
+        mask-image: radial-gradient(ellipse at center, rgba(0,0,0,.6), transparent 75%);
+        -webkit-mask-image: radial-gradient(ellipse at center, rgba(0,0,0,.6), transparent 75%);
+      }
+      .ws-screenshot-frame {
+        position: relative;
+        z-index: 1;
+        max-width: 760px;
+        margin: 0 auto;
+        border-radius: var(--r);
+        overflow: hidden;
+        border: 1px solid var(--border2);
+        background: var(--card);
+        box-shadow: 0 24px 60px rgba(0,0,0,.4), 0 0 40px rgba(0,229,200,.07);
+      }
+      .ws-screenshot-frame::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0;
+        height: 2px;
+        background: var(--grad);
+        z-index: 2;
+      }
+      .ws-screenshot-chrome {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        background: var(--dark2);
+        border-bottom: 1px solid var(--border);
+      }
+      .ws-chrome-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .ws-chrome-dot.red { background: #ff5f57; }
+      .ws-chrome-dot.yellow { background: #febc2e; }
+      .ws-chrome-dot.green { background: #28c840; }
+      .ws-chrome-title {
+        flex: 1;
+        text-align: center;
+        font-size: .75rem;
+        font-weight: 600;
+        color: var(--muted2);
+        letter-spacing: .04em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+      }
+      .ws-chrome-title svg {
+        width: 14px; height: 14px;
+        color: var(--cyan);
+      }
+      .ws-screenshot-frame img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+      .ws-screenshot-caption {
+        position: relative;
+        z-index: 1;
+        margin-top: 16px;
+        font-size: .85rem;
+        color: var(--muted);
+      }
+      @media (max-width: 768px) {
+        .ws-cta-row { flex-direction: column; text-align: center; }
+        .ws-cta-row .ws-cta-text { min-width: unset; }
+        .ms-achievement{
+          display: none;
+        }
+      }
+          /* Weekly Live Sessions Styling Updates */
+    .weekly-session-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
 
+    .video-embed-container {
+      width: 100%;
+      background: var(--card);
+      border: 1px solid var(--border2);
+      border-radius: var(--r-lg);
+      padding: 12px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, .4), 0 0 40px rgba(0, 229, 200, .05);
+      overflow: hidden;
+    }
+
+    .video-embed-container wistia-player {
+      border-radius: var(--r);
+      overflow: hidden;
+    }
+    @media screen and (max-width: 768px) {
+  /* Your styles for tablets and mobile devices go here */
+ .weekly-session-grid{
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+    </style>
+    <div class="container">
+      <div class="weekly-session-grid">
+        <div>
+          <div class="section-label">Weekly Live Sessions</div>
+          <h2>Interactive <span class="grad-text">Q&amp;A and Feedback</span> Sessions</h2>
+          <p style="color:var(--muted);margin-top:16px;line-height:1.8;font-size:.95rem;">Learning doesn't end with pre-recorded classes. Every week, we host live virtual check-ins designed to keep you on track and remove any creative roadblocks.</p>
+          <p style="color:var(--muted);margin-top:14px;line-height:1.8;font-size:.95rem;">During these sessions, you can get direct help, clarify animation techniques, understand industry workflows, and watch live breakdowns of complex animation systems.</p>
+          <div style="margin-top:28px;">
+            <a href="https://selar.com/motionessential" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Enroll Now &amp; Join Live Sessions</a>
+          </div>
+        </div>
+        <div class="video-embed-container">
+          <script src="https://fast.wistia.com/player.js" async></script>
+          <script src="https://fast.wistia.com/embed/jv3tsy1sbd.js" async type="module"></script>
+          <style>wistia-player[media-id='jv3tsy1sbd']:not(:defined) { background: center / contain no-repeat url('https://fast.wistia.com/embed/medias/jv3tsy1sbd/swatch'); display: block; filter: blur(5px); padding-top:62.5%; }</style>
+          <wistia-player media-id="jv3tsy1sbd" aspect="1.6"></wistia-player>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+    <!-- MEET OUR STUDENTS -->
+  <section class="section section-alt" id="meet-students">
+    <style>
+      /* Student cards */
+      .ms-intro {
+        max-width: 720px;
+        margin: 0 auto 56px;
+        text-align: center;
+      }
+      .ms-intro p {
+        color: var(--muted);
+        font-size: .97rem;
+        line-height: 1.8;
+        margin-top: 14px;
+      }
+      .ms-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 14px;
+      }
+      /* The beautiful frame */
+      .ms-card {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .ms-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 14px;
+        overflow: hidden;
+        background: var(--dark3);
+        /* multi-layer decorative frame */
+        box-shadow:
+          0 0 0 1px rgba(0,229,200,.18),
+          0 0 0 3px rgba(4,14,24,.95),
+          0 0 0 4px rgba(0,229,200,.1),
+          0 6px 24px rgba(0,0,0,.5),
+          0 0 36px rgba(0,229,200,.04);
+        transition: transform .35s, box-shadow .35s;
+      }
+      .ms-card:hover .ms-frame {
+        transform: translateY(-6px) scale(1.01);
+        box-shadow:
+          0 0 0 1px rgba(0,229,200,.45),
+          0 0 0 4px rgba(4,14,24,.95),
+          0 0 0 6px rgba(0,229,200,.22),
+          0 20px 60px rgba(0,0,0,.65),
+          0 0 80px rgba(0,229,200,.12);
+      }
+      /* Gradient corner accents */
+      .ms-frame::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        border-radius: 14px;
+        background:
+          linear-gradient(135deg, rgba(1,255,169,.18) 0%, transparent 35%),
+          linear-gradient(315deg, rgba(0,200,255,.12) 0%, transparent 35%);
+        pointer-events: none;
+      }
+      /* Bottom gradient overlay for text legibility */
+      .ms-frame::after {
+        content: '';
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        height: 55%;
+        z-index: 2;
+        background: linear-gradient(to top, rgba(4,14,24,.92) 0%, rgba(4,14,24,.5) 50%, transparent 100%);
+        border-radius: 0 0 14px 14px;
+        pointer-events: none;
+      }
+      .ms-frame img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        border-radius: 14px;
+        z-index: 1;
+        transition: transform .5s;
+        display: block;
+      }
+      .ms-card:hover .ms-frame img {
+        transform: scale(1.04);
+      }
+      /* Floating corner dots  decorative */
+      .ms-frame-corner {
+        position: absolute;
+        z-index: 4;
+        pointer-events: none;
+      }
+      .ms-frame-corner.tl { top: 6px; left: 6px; }
+      .ms-frame-corner.tr { top: 6px; right: 6px; }
+      .ms-frame-corner.bl { bottom: 38px; left: 6px; }
+      .ms-frame-corner.br { bottom: 38px; right: 6px; }
+      .ms-frame-corner svg {
+        width: 11px; height: 11px;
+        color: var(--cyan);
+        opacity: .55;
+      }
+      /* Overlay name/role */
+      .ms-frame-info {
+        position: absolute;
+        bottom: 0; left: 0; right: 0;
+        z-index: 5;
+        padding: 8px 8px 9px;
+        text-align: center;
+      }
+      .ms-frame-name {
+        font-size: .68rem;
+        font-weight: 800;
+        color: #fff;
+        letter-spacing: -.01em;
+        line-height: 1.15;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .ms-frame-role {
+        font-size: .56rem;
+        color: var(--cyan);
+        font-weight: 600;
+        margin-top: 2px;
+        letter-spacing: .02em;
+        opacity: .9;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      /* Achievement pill overlaid on the frame */
+      .ms-achievement {
+        position: absolute;
+        top: 7px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 6;
+        background: var(--grad);
+        color: var(--dark);
+        font-size: .52rem;
+        font-weight: 800;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+        padding: 3px 9px;
+        border-radius: 100px;
+        white-space: nowrap;
+        box-shadow: 0 3px 10px rgba(1,255,169,.35);
+      }
+      /* "+480 More" highlight tile */
+      .ms-more {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1/1;
+        border-radius: 14px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        background: linear-gradient(135deg, rgba(1,255,169,.12), rgba(0,200,255,.08));
+        border: 1px dashed var(--border2);
+        padding: 8px;
+        transition: transform .35s, border-color .35s;
+      }
+      .ms-card:hover .ms-more {
+        transform: translateY(-6px) scale(1.01);
+        border-color: var(--cyan);
+      }
+      .ms-more-num {
+        font-size: 1.3rem;
+        font-weight: 900;
+        background: var(--grad);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        line-height: 1;
+      }
+      .ms-more-label {
+        font-size: .58rem;
+        font-weight: 700;
+        color: var(--text);
+        text-transform: uppercase;
+        letter-spacing: .06em;
+        margin-top: 4px;
+        line-height: 1.3;
+      }
+      /* The big pull-quote below the grid */
+      .ms-pullquote {
+        margin-top: 64px;
+        text-align: center;
+        padding: 48px 40px;
+        background: linear-gradient(135deg, rgba(1,255,169,.04), rgba(0,200,255,.04));
+        border: 1px solid var(--border);
+        border-radius: var(--r-lg);
+        position: relative;
+        overflow: hidden;
+      }
+      .ms-pullquote::before {
+        content: '"';
+        position: absolute;
+        top: -20px; left: 32px;
+        font-size: 10rem;
+        font-weight: 900;
+        color: rgba(0,229,200,.06);
+        line-height: 1;
+        pointer-events: none;
+        font-family: 'Inter', sans-serif;
+      }
+      .ms-pullquote blockquote {
+        font-size: clamp(1.1rem, 2.2vw, 1.45rem);
+        font-weight: 700;
+        color: var(--text);
+        line-height: 1.55;
+        max-width: 780px;
+        margin: 0 auto 20px;
+        position: relative;
+        z-index: 1;
+      }
+      .ms-pullquote cite {
+        font-size: .82rem;
+        color: var(--muted);
+        font-style: normal;
+        font-weight: 500;
+      }
+      .ms-pullquote cite span {
+        color: var(--cyan);
+        font-weight: 700;
+      }
+      @media (max-width: 1200px) {
+        .ms-grid { grid-template-columns: repeat(4, 1fr); }
+      }
+      @media (max-width: 1024px) {
+        .ms-grid { grid-template-columns: repeat(4, 1fr); }
+      }
+      @media (max-width: 560px) {
+        .ms-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .ms-pullquote { padding: 32px 24px; }
+      }
+    </style>
+    <div class="container">
+      <div class="ms-intro">
+        <div class="section-label" style="justify-content:center;">Real People. Real Results.</div>
+        <h2>Meet the Students <span class="grad-text">Changing Their Lives</span></h2>
+        <p>These are not actors. These are not carefully-selected outliers. These are ordinary people, students, job seekers, side-hustlers, parents. who picked up their smartphones, followed the system, and built something extraordinary. Every face below represents a decision that changed everything.</p>
+      </div>
+
+      <div class="ms-grid">
+
+        <!-- Student 1 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./makele-cross.webp" alt="Makele Cross" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Makele Cross</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 2 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/ChisomMarvellous.jpg" alt="Chisom Marvellous" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Chisom Marvellous</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 3 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/Desmond_Ikechukwu.jpg" alt="Desmond Ikechukwu" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Desmond Ikechukwu</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 4 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/DonPaul.jpg" alt="Don Paul" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Don Paul</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 5 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/OlajumokeOladeji.jpg" alt="Olajumoke Oladeji" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Olajumoke Oladeji</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 6 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/ElotaSomtochukwu.jpg" alt="Elota Somtochukwu" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Elota Somtochukwu</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 7 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/EstherOkpor.jpg" alt="Esther Okpor" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Esther Okpor</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 8 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/EyimofeChoice.jpg" alt="Eyimofe Choice" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Eyimofe Choice</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 9 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/FavourChinaza.jpg" alt="Favour Chinaza" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Favour Chinaza</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 10 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/GabrielAfolarin.jpg" alt="Gabriel Afolarin" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Gabriel Afolarin</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 11 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/GiftOdichinma.jpg" alt="Gift Odichinma" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Gift Odichinma</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 12 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/VictoryInwang.jpg" alt="Victory Inwang" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Victory Inwang</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 13 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/InioluwaMobolorunduro.jpg" alt="Inioluwa Mobolorunduro" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Inioluwa Mobolorunduro</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 14 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/JCBrown.jpg" alt="JC Brown" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">JC Brown</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 15 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/MiracleEdet.jpg" alt="Miracle Edet" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Miracle Edet</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 16 -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/AmadiPraise.jpg" alt="Amadi Praise" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Amadi Praise</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 17  open slot -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/JosiahAdebisi.jpg" alt="Josiah Adebisi" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Josiah Adebisi</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 18  open slot -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/GiftNduka.jpg" alt="Gift Nduka" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Gift Nduka</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 19  open slot -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/MercyNubi.jpeg" alt="Mercy Nubi" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Mercy Nubi</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 20  open slot -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/ZainabOniyide.jpg" alt="Zainab Oniyide" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Zainab Oniyide</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 21  open slot -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/OyebolaOluwasunmisola.jpg" alt="Oyebola Oluwasunmisola" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Oyebola Oluwasunmisola</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 22  open slot -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/MosesIdjerehki.jpg" alt="Moses Idjerehki" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Moses Idjerehki</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Student 23  open slot -->
+        <div class="ms-card">
+          <div class="ms-frame">
+             
+            <img src="./student/PreciousSoma.jpg" alt="Precious Soma" loading="lazy" />
+            <span class="ms-frame-corner tl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9V3h6"/></svg></span>
+            <span class="ms-frame-corner tr"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 9V3h-6"/></svg></span>
+            <span class="ms-frame-corner bl"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 15v6h6"/></svg></span>
+            <span class="ms-frame-corner br"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v6h-6"/></svg></span>
+            <div class="ms-frame-info">
+              <div class="ms-frame-name">Precious Soma</div>
+              <div class="ms-frame-role">Motion  Designer</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 24  "+480 More" highlight -->
+        <div class="ms-card">
+          <div class="ms-more">
+            <div class="ms-more-num">+480</div>
+            <div class="ms-more-label">More students<br>Learning &amp; Growing </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="ms-pullquote">
+        <blockquote>They didn't come in with connections. They didn't come in with expensive equipment. They came in with a smartphone and the Willingness to learn. That's the only qualification that has ever mattered inside Mavenmint Academy.</blockquote>
+        <cite><span>Coach Femi</span>, Founder · Mavenmint Academy</cite>
+        <div style="margin-top:28px;">
+          <a href="https://selar.com/motionessential" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">Become the Next Success Story</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
   <!-- COUNTRIES -->
   <section class="countries-section section" id="countries">
     <div class="container">
@@ -6444,7 +6903,7 @@ I am also a public speaker and have had the privilege of inspiring many people t
                 <line x1="5" y1="12" x2="19" y2="12" />
               </svg></span></button>
           <div class="faq-a">Maven Mint Academy is focused on teaching people how to create industry-standard motion
-            graphics and animations using just their smartphones. The goal is to make motion design accessible and help
+             and animations using just their smartphones. The goal is to make motion design accessible and help
             people build valuable skills they can use to earn from brands and businesses globally.</div>
         </div>
         <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Is the academy virtual or physical?<span
@@ -6709,7 +7168,7 @@ I am also a public speaker and have had the privilege of inspiring many people t
             <img src="./logo.png" alt="Maven Mint" class="brand-logo" />
 
           </div>
-          <p>A leading Motion Design Institute dedicated to empowering smartphone users with the skills to create industry-standard motion graphics and animations for brands and businesses.
+          <p>A leading Motion Design Institute dedicated to empowering smartphone users with the skills to create industry-standard motion  and animations for brands and businesses.
           </p>
           <div class="social-links" style="margin-top:20px;">
             <a class="social-link" href="https://www.instagram.com/mavenmint/" target="_blank" rel="noopener noreferrer"
@@ -6803,7 +7262,7 @@ I am also a public speaker and have had the privilege of inspiring many people t
           });
           if (res.ok) {
             formMsg.style.color = 'var(--success, #28a745)';
-            formMsg.textContent = 'Message sent — thanks! We will reply within 24 hours.';
+            formMsg.textContent = 'Message sent  thanks! We will reply within 24 hours.';
             contactForm.reset();
           } else {
             const data = await res.json().catch(() => ({}));
@@ -6812,7 +7271,7 @@ I am also a public speaker and have had the privilege of inspiring many people t
           }
         } catch (err) {
           formMsg.style.color = 'var(--danger, #d9534f)';
-          formMsg.textContent = 'Network error — check your connection.';
+          formMsg.textContent = 'Network error  check your connection.';
         }
         submitBtn.disabled = false;
         submitBtn.innerHTML = orig;
@@ -6821,7 +7280,7 @@ I am also a public speaker and have had the privilege of inspiring many people t
     const obs = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = '1'; e.target.style.transform = 'translateY(0)'; obs.unobserve(e.target); } }); }, { threshold: .08 });
     document.querySelectorAll('.card,.about-item,.stat-item,.info-card,.resource-row').forEach(el => { el.style.opacity = '0'; el.style.transform = 'translateY(18px)'; el.style.transition = 'opacity .55s ease,transform .55s ease'; obs.observe(el); });
 
-    // Countries stat bar — count-up animation
+    // Countries stat bar  count-up animation
     (function () {
       var targets = [
         { el: null, end: 10,  suffix: '+', decimals: 0 },
@@ -6901,7 +7360,7 @@ I am also a public speaker and have had the privilege of inspiring many people t
         return Math.max(0, cards.length - getVisibleCards());
       }
 
-      // Create indicators — one per reachable stop, not one per card
+      // Create indicators  one per reachable stop, not one per card
       function buildIndicators() {
         indicatorsContainer.innerHTML = '';
         const maxIndex = getMaxIndex();
